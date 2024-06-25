@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case 2</title>
+    <link href="style_case2.css" rel="stylesheet" type="text/css">
+    <script src="case2.js"></script>
+</head>
+<body>
+    <div id="div">
+        <div id="header-buttons">
+            <a href="home.html">
+                <button class="nav-button">Home</button>
+            </a>
+            <p style="font-weight: bold; font-size: 20px; font-style: italic; margin-top: 5px;">To go to case 1 go to the home page</p>
+        </div>
+        <br>
+        <h1>Case 2 (Concrete/Shotcrete Support)</h1>
+
+        <br>
+        <div id="div_inputs">
+            <div class="input-group">
+                <label>factored test load: </label>
+                <input id="FTL2"><span class="unit"> kips</span>
+            </div>
+            <div class="input-group">
+                <label>bearing plate width (between BPs): </label>
+                <input id="BPW2"><span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label>bearing plate length (height): </label>
+                <input id="BPL2"><span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label>bearing plate thickness: </label>
+                <input id="BPT2"><span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label>bearing plate hole diameter: </label>
+                <input id="BPHD2"><span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label>anchor head diameter: </label>
+                <input id="AHD2"><span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label>cored hole diameter: </label>
+                <input id="CHD"><span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label>F'c: </label>
+                <input id="FC"><span class="unit"> ksi</span>
+            </div>
+            <div class="input-group">
+                <label>bearing plate yield strength: </label>
+                <input id="BPYS2"><span class="unit"> ksi</span>
+            </div>
+            <div class="input-group">
+                <label>bearing stress reduction factor: </label>
+                <input id="BSRF2"><span class="unit"> (0.9)</span>
+            </div>
+            <div class="input-group">
+                <label>allowable concrete bearing stress: </label>
+                <input id="ABCS"><span class="unit"> ksi</span>
+            </div>
+            <button id="mySubmit2">submit</button>
+        </div>
+    </div>
+    <div id="div2">
+        <br>
+        <h1>Results 2:</h1>
+        <p>plate moment of inertia: <span id="pmoi"></span></p>
+        <p>net bearing plate area on concrete: <span id="nbpa"></span></p>
+        <p>concrete stress: <span id="cs"></span></p>
+        <p>net bearing stress on bearing plate: <span id="nbsobp"></span></p>
+        <p>moment at centerline of bearing plate: <span id="macobp"></span></p>
+        <p>bearing on concrete: <span id="boc"></span></p>
+        <p>bearing on steel plate: <span id="bosp"></span></p>
+        <p>bending stress: <span id="bs"></span></p>
+        <p>allowable bending stress: <span id="abs"></span></p>
+        <p>S required: <span id="Sreq2"></span></p>
+        <p>S provided: <span id="Sprov2"></span></p>
+        <p style="font-size: 16px; font-weight: bold;"><mark>provide larger plate?</mark> <span id="plp2"></span></p>
+    </div>
+    <script src="case2.js"></script>
+</body>
+</html>
