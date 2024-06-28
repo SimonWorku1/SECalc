@@ -163,7 +163,7 @@ mark {
     border-radius: 10px;
 }
 
-footer {
+#footer {
     background-color: #333;
     color: #fff;
     text-align: center;
@@ -174,5 +174,4 @@ footer {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-
 
