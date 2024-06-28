@@ -1,31 +1,34 @@
+/* Existing styles */
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+    background-color: #1c1c1c;
+    color: #e0e0e0;
     margin: 0;
     padding: 0;
-    color: #333;
 }
 
 header {
-    background-color: #343a40;
+    background: linear-gradient(135deg, #2e2e2e, #000000);
     color: #ffffff;
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
 header .logo {
-    width: 100px;
+    width: 80px;
     height: auto;
     margin-bottom: 10px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 28px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #header-buttons {
@@ -35,70 +38,80 @@ header h1 {
 
 .nav-button {
     padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #4c4c4c;
+    color: #ffffff;
     border: none;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
     margin: 0 10px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .nav-button:hover {
-    background-color: #0056b3;
+    background-color: #6c6c6c;
+    transform: scale(1.05);
 }
 
-#div_inputs {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    margin-left: 20px;
+#div_inputs, #div2 {
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
 }
 
 .input-group {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .input-group label {
     width: 300px;
     text-align: left;
     margin-right: 10px;
+    color: #b0b0b0;
 }
 
 .input-group input {
     margin-right: 5px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #4c4c4c;
+    background-color: #3c3c3c;
+    color: #e0e0e0;
 }
 
 .unit {
     margin-left: 5px;
+    color: #b0b0b0;
 }
 
-button#mySubmit2 {
+button#mySubmit, button#mySubmit2 {
     padding: 10px 20px;
     background-color: #28a745;
-    color: #fff;
+    color: #ffffff;
     border: none;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-button#mySubmit2:hover {
+button#mySubmit:hover, button#mySubmit2:hover {
     background-color: #218838;
-}
-
-#div2 {
-    margin: 20px;
+    transform: scale(1.05);
 }
 
 h1 {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
 }
 
 p {
@@ -107,4 +120,45 @@ p {
 
 p span {
     font-weight: bold;
+    color: #ffffff;
+}
+
+mark {
+    background-color: #ffcc00;
+    color: #1c1c1c;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.larger-plate {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#div2 {
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+#div2 .result-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#div2 .result-item span {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
 }

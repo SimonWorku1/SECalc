@@ -25,27 +25,27 @@
             <input id="FTL"><span class="unit"> kips</span>
         </div>
         <div class="input-group">
-            <label>bearing plate width (between BPs): </label>
+            <label>bearing plate width (f): </label>
             <input id="BPW"><span class="unit"> inches</span>
         </div>
         <div class="input-group">
-            <label>bearing plate length (height): </label>
+            <label>bearing plate length (b): </label>
             <input id="BPL"><span class="unit"> inches</span>
         </div>
         <div class="input-group">
-            <label>bearing plate thickness: </label>
+            <label>bearing plate thickness (t): </label>
             <input id="BPT"><span class="unit"> inches</span>
         </div>
         <div class="input-group">
-            <label>bearing plate hole diameter: </label>
+            <label>bearing plate hole diameter (c): </label>
             <input id="BPHD"><span class="unit"> inches</span>
         </div>
         <div class="input-group">
-            <label>CL to CL spacing between wedge plates: </label>
+            <label>CL to CL spacing between wedge plates (f): </label>
             <input id="CL"><span class="unit"> inches</span>
         </div>
         <div class="input-group">
-            <label>anchor head diameter: </label>
+            <label>anchor head diameter (d): </label>
             <input id="AHD"><span class="unit"> inches</span>
         </div>
         <div class="input-group">
@@ -56,9 +56,11 @@
             <label>bearing stress reduction factor: </label>
             <input id="BSRF"><span class="unit"> (0.9)</span>
         </div>
+        <div id="bearing-image" class="container">
+            <img id="bearing-imagepng" src="BearingPlate(Rev).png" alt="Bearing Plate (Rev)">
+        </div>
         <button id="mySubmit">submit</button>
     </div>
-
     <div id="div2">
         <br>
         <h1>Results:</h1>
@@ -73,7 +75,7 @@
         <p>stress on plate: <span id="sop"></span></p>
         <p>S required: <span id="Sreq"></span></p>
         <p>S provided: <span id="Sprov"></span></p>
-        <p id = "plp" style="size: 16px; font-weight: bold;"><mark>provide larger plate?</mark></p>
+        <p style="font-size: 16px; font-weight: bold;"><mark>provide larger plate?</mark><span id="plp"> </span></p>
     </div>
     <script src="case1.js"></script>
 </body>

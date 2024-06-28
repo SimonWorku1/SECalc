@@ -12,55 +12,53 @@ document.getElementById("mySubmit2").onclick = function(){
     ABCS = document.getElementById("ABCS").value;
 
     pmoi = ((BPW2-BPHD2)*BPT2**3)/12;
-    const one = document.getElementById("pmoi").textContent = " "+ pmoi;
+    document.getElementById("pmoi").textContent = pmoi.toFixed(2) + " in^4";
 
-    nbpa = (BPW2*BPL2)-(Math.PI * CHD**2)/4
-    const two = document.getElementById("nbpa").textContent = " "+ nbpa;
+    nbpa = (BPW2*BPL2)-(Math.PI * CHD**2)/4;
+    document.getElementById("nbpa").textContent = nbpa.toFixed(2) + " sqin";
 
     cs = FTL2/nbpa;
-    const three = document.getElementById("cs").textContent = " "+ cs;
+    document.getElementById("cs").textContent = cs.toFixed(2) + " ksi";
 
-    nbsobp = FTL2/((Math.PI/4)*((parseFloat(AHD2)+parseFloat(BPT2))**2 - BPHD2**2))
-    const four = document.getElementById("nbsobp").textContent = " "+ nbsobp;
+    nbsobp = FTL2/((Math.PI/4)*((parseFloat(AHD2)+parseFloat(BPT2))**2 - BPHD2**2));
+    document.getElementById("nbsobp").textContent = nbsobp.toFixed(2) + " ";
 
+    let MaxBP, MinBP;
     if (BPW2 >= BPL2){
         MaxBP = BPW2;
         MinBP = BPL2;
-}
-    else{
+    } else {
         MaxBP = BPL2;
         MinBP = BPW2;
     }
     boc = (cs*((MaxBP*MaxBP/2 *MaxBP/4)-((Math.PI*CHD*CHD/8)*((CHD/2)*(0.4244)))));
-    const five = document.getElementById("boc").textContent = " "+ boc;
+    document.getElementById("boc").textContent = boc.toFixed(2) + " ";
 
     bosp = -nbsobp*(Math.PI*((parseFloat(AHD2) + parseFloat(BPT2))**3)/8)*0.2122065+((nbsobp*Math.PI)/8)*(BPHD2**3)*0.2122065;
-    const six = document.getElementById("bosp").textContent = " "+ bosp;
+    document.getElementById("bosp").textContent = bosp.toFixed(2) + " ";
 
     macobp = boc + bosp;
-    const seven = document.getElementById("macobp").textContent = " "+ macobp;
+    document.getElementById("macobp").textContent = macobp.toFixed(2) + " k-in";
 
     bs = macobp*(BPT2/2)/pmoi;
-    const eight = document.getElementById("bs").textContent = " "+ bs;
+    document.getElementById("bs").textContent = bs.toFixed(2) + " ksi";
 
     abs = BSRF2*BPYS2;
-    const nine = document.getElementById("abs").textContent = " "+ abs;
+    document.getElementById("abs").textContent = abs.toFixed(2) + " ksi";
 
     Sreq2 = macobp/(BSRF2*BPYS2);
-    const ten = document.getElementById("Sreq2").textContent = " "+ Sreq2;
+    document.getElementById("Sreq2").textContent = Sreq2.toFixed(2) + " in^4";
 
-    
     Sprov2 = ((MinBP-BPHD2)*BPT2**2)/6;
-    const eleven = document.getElementById("Sprov2").textContent = " "+ Sprov2;
+    document.getElementById("Sprov2").textContent = Sprov2.toFixed(2) + " in^4";
 
+    let plp2;
     if(Sprov2 > Sreq2){
         plp2 = "O.K.";
+        document.getElementById("plp2").style.color = "green";
+    } else {
+        plp2 = " Provide Larger Plate";
+        document.getElementById("plp2").style.color = "red";
     }
-    else{
-        plp2 = "Provide Larger Plate";
-    }
-    const twelve = document.getElementById("plp2").textContent = " "+ plp2;
-
-
-}       
-
+    document.getElementById("plp2").textContent = plp2;
+}

@@ -1,55 +1,57 @@
-document.getElementById("mySubmit").onclick = function(){
-    FTL = document.getElementById("FTL").value;
-    BPW = document.getElementById("BPW").value;
-    BPL = document.getElementById("BPL").value;
-    BPT = document.getElementById("BPT").value;
-    BPHD = document.getElementById("BPHD").value;
-    CL = document.getElementById("CL").value;
-    AHD = document.getElementById("AHD").value;
-    BPYS = document.getElementById("BPYS").value;
-    BSRF = document.getElementById("BSRF").value;
+document.getElementById("mySubmit").onclick = function() {
+    // Retrieving input values
+    let FTL = parseFloat(document.getElementById("FTL").value);
+    let BPW = parseFloat(document.getElementById("BPW").value);
+    let BPL = parseFloat(document.getElementById("BPL").value);
+    let BPT = parseFloat(document.getElementById("BPT").value);
+    let BPHD = parseFloat(document.getElementById("BPHD").value);
+    let CL = parseFloat(document.getElementById("CL").value);
+    let AHD = parseFloat(document.getElementById("AHD").value);
+    let BPYS = parseFloat(document.getElementById("BPYS").value);
+    let BSRF = parseFloat(document.getElementById("BSRF").value);
 
-    bpos = FTL/((Math.PI*(AHD**2)/4)-(Math.PI*(BPHD**2)/4));
-    const one = document.getElementById("bpos").textContent = " "+ bpos
-    
-    loewp = FTL/2;
-    const two = document.getElementById("loewp").textContent = " "+loewp;
+    // Calculating results
+    let bpos = FTL / ((Math.PI * (AHD ** 2) / 4) - (Math.PI * (BPHD ** 2) / 4));
+    document.getElementById("bpos").textContent = bpos.toFixed(2) + " ksi";
 
-    esq = ((Math.PI*AHD**2)/4)**0.5;
-    const three = document.getElementById("esq").textContent =  " "+esq;
+    let loewp = FTL / 2;
+    document.getElementById("loewp").textContent = loewp.toFixed(2) + " kips";
 
-    moi = ((BPL-BPHD)*(BPT**3))/12;
-    const four = document.getElementById("moi").textContent =  " "+moi;
+    let esq = Math.sqrt((Math.PI * AHD ** 2) / 4);
+    document.getElementById("esq").textContent = esq.toFixed(2) + " inches";
 
-    lolfc = Math.cos(45 * Math.PI/180) * AHD/2;
-    const five = document.getElementById("lolfc").textContent =  " "+lolfc;
+    let moi = ((BPL - BPHD) * (BPT ** 3)) / 12;
+    document.getElementById("moi").textContent = moi.toFixed(2) + " in^4";
 
-    moma = (CL/2 - esq/2);
-    const six = document.getElementById("moma").textContent =  " "+moma;
+    let lolfc = Math.cos(45 * Math.PI / 180) * AHD / 2;
+    document.getElementById("lolfc").textContent = lolfc.toFixed(2) + " inches";
 
-    macob = (FTL/2) * moma;
-    const seven = document.getElementById("macob").textContent =  " "+macob;
+    let moma = (CL / 2 - esq / 2);
+    document.getElementById("moma").textContent = moma.toFixed(2) + " inches";
 
-    asop = BPYS * BSRF;
-    const eight = document.getElementById("asop").textContent =  " "+asop;
+    let macob = (FTL / 2) * moma;
+    document.getElementById("macob").textContent = macob.toFixed(2) + " k-in";
 
-    sop = macob*(BPT/2)/moi;
-    const nine = document.getElementById("sop").textContent =  " "+sop;
+    let asop = BPYS * BSRF;
+    document.getElementById("asop").textContent = asop.toFixed(2) + " ksi";
 
-    sreq = macob/(BSRF*BPYS);
-    const ten = document.getElementById("Sreq").textContent =  " "+sreq;
+    let sop = macob * (BPT / 2) / moi;
+    document.getElementById("sop").textContent = sop.toFixed(2) + " ksi";
 
-    sprov = ((BPL-BPHD)*BPT**2)/6;
-    const eleven = document.getElementById("Sprov").textContent =  " "+sprov;
+    let sreq = macob / (BSRF * BPYS);
+    document.getElementById("Sreq").textContent = sreq.toFixed(2) + " in^3";
 
-    if(sop <= asop && sreq <= sprov){
-        plp = "O.K.";
-    } 
-    else{
-        plp = "Provide Larger Plate";
+    let sprov = ((BPL - BPHD) * BPT ** 2) / 6;
+    document.getElementById("Sprov").textContent = sprov.toFixed(2) + " in^3";
+
+    // Checking condition for plate size
+    let plp;
+    if (sop <= asop && sreq <= sprov) {
+        plp = "Plate size is adequate";
+        document.getElementById("plp").style.color = "green";
+    } else {
+        plp = " Provide Larger Plate";
+        document.getElementById("plp").style.color = "red";
     }
-    const twelve = document.getElementById("plp").textContent =  " "+plp;
-
-
-}
-
+    document.getElementById("plp").textContent = plp;
+};

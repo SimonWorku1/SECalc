@@ -25,35 +25,35 @@
                 <input id="FTL2"><span class="unit"> kips</span>
             </div>
             <div class="input-group">
-                <label>bearing plate width (between BPs): </label>
+                <label>bearing plate width (f): </label>
                 <input id="BPW2"><span class="unit"> inches</span>
             </div>
             <div class="input-group">
-                <label>bearing plate length (height): </label>
+                <label>bearing plate length (b): </label>
                 <input id="BPL2"><span class="unit"> inches</span>
             </div>
             <div class="input-group">
-                <label>bearing plate thickness: </label>
+                <label>bearing plate thickness (t): </label>
                 <input id="BPT2"><span class="unit"> inches</span>
             </div>
             <div class="input-group">
-                <label>bearing plate hole diameter: </label>
+                <label>bearing plate hole diameter (c): </label>
                 <input id="BPHD2"><span class="unit"> inches</span>
             </div>
             <div class="input-group">
-                <label>anchor head diameter: </label>
+                <label>anchor head diameter (d): </label>
                 <input id="AHD2"><span class="unit"> inches</span>
             </div>
             <div class="input-group">
-                <label>cored hole diameter: </label>
+                <label>cored hole diameter (CHD): </label>
                 <input id="CHD"><span class="unit"> inches</span>
             </div>
             <div class="input-group">
-                <label>F'c: </label>
+                <label> concrete compressive stregth f 'c: </label>
                 <input id="FC"><span class="unit"> ksi</span>
             </div>
             <div class="input-group">
-                <label>bearing plate yield strength: </label>
+                <label>bearing plate yield strength F'y: </label>
                 <input id="BPYS2"><span class="unit"> ksi</span>
             </div>
             <div class="input-group">
@@ -63,6 +63,9 @@
             <div class="input-group">
                 <label>allowable concrete bearing stress: </label>
                 <input id="ABCS"><span class="unit"> ksi</span>
+            </div>
+            <div id="bearing-image" class="container">
+                <img id="bearing-imagepng" src="BearingPlate(Rev).png" alt="Bearing Plate (Rev)">
             </div>
             <button id="mySubmit2">submit</button>
         </div>
@@ -81,7 +84,7 @@
         <p>allowable bending stress: <span id="abs"></span></p>
         <p>S required: <span id="Sreq2"></span></p>
         <p>S provided: <span id="Sprov2"></span></p>
-        <p style="font-size: 16px; font-weight: bold;"><mark>provide larger plate?</mark> <span id="plp2"></span></p>
+        <p style="font-size: 16px; font-weight: bold;"><mark>provide larger plate?</mark><span id="plp2"></span></p>
     </div>
     <script src="case2.js"></script>
 </body>
