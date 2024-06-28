@@ -50,3 +50,14 @@ header h1 {
     background-color: #6c6c6c;
     transform: scale(1.05);
 }
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
