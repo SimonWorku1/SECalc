@@ -54,7 +54,7 @@ document.getElementById("mySubmit2").onclick = function(){
 
     let plp2;
     if(Sprov2 > Sreq2){
-        plp2 = "O.K.";
+        plp2 = "Plate size is adequate";
         document.getElementById("plp2").style.color = "green";
     } else {
         plp2 = " Provide Larger Plate";
