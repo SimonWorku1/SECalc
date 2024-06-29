@@ -2,53 +2,35 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #1c1c1c;
     color: #e0e0e0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
 header {
     background: linear-gradient(135deg, #a1a1a1, #1c1c1c);
-    padding: 20px;
-    width: 100%;
+    color: #ffffff;
+    padding: 20px 0;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    position: fixed;
-    top: 0;
-    z-index: 1000;
+    position: relative;
 }
+
 header h1 {
     margin: 0;
     font-size: 28px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    color: #ffffff;
 }
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding-top: 80px; /* To avoid overlap with fixed header */
+
+#header-buttons {
+    margin-top: 10px;
 }
-.menu {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    text-align: center;
-}
-.menu p {
-    margin: 10px 0;
-    font-size: 18px;
-    text-align: center;
-}
-.menu-button {
+
+.nav-button {
     padding: 10px 20px;
     background-color: #4c4c4c;
     color: #ffffff;
@@ -56,17 +38,49 @@ header h1 {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-    margin: 10px 0;
+    margin: 0 10px;
     transition: background-color 0.3s, transform 0.3s;
-    width: 200px;
 }
-.menu-button:hover {
+
+.nav-button:hover {
     background-color: #6c6c6c;
     transform: scale(1.05);
 }
-footer {
-    margin-top: 20px;
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    font-size: 14px;
-    color: #888;
+}
+
+.menu-container {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu-container h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.menu-container p {
+    font-size: 18px;
+    color: #cccccc;
+}
+
+#footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
