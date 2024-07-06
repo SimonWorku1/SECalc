@@ -55,10 +55,16 @@ document.getElementById("mySubmit2").onclick = function(){
     let plp2;
     if(Sprov2 > Sreq2){
         plp2 = "Plate size is adequate";
-        document.getElementById("plp2").style.color = "green";
+        document.getElementById("plp2").style.color = "white";
+        document.getElementById("plp2").style.backgroundColor = "green";
+        document.getElementById("plp2").style.fontWeight = "bold";
+        document.getElementById("plp2").style.marginLeft = "10px";
     } else {
         plp2 = " Provide Larger Plate";
-        document.getElementById("plp2").style.color = "red";
+        document.getElementById("plp").style.color = "white";
+        document.getElementById("plp").style.backgroundColor = "red";
+        document.getElementById("plp").style.fontWeight = "bold";
+        document.getElementById("plp").style.marginLeft = "10px";
     }
     document.getElementById("plp2").textContent = plp2;
 }

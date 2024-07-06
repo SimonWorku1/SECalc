@@ -22,47 +22,47 @@
         <div id="div_inputs">
             <div class="input-group">
                 <label>factored test load: </label>
-                <input id="FTL2"><span class="unit"> kips</span>
+                <input id="FTL2" value = 0><span class="unit"> kips</span>
             </div>
             <div class="input-group">
                 <label>bearing plate width (f): </label>
-                <input id="BPW2"><span class="unit"> inches</span>
+                <input id="BPW2" value = 13.5><span class="unit"> inches</span>
             </div>
             <div class="input-group">
                 <label>bearing plate length (b): </label>
-                <input id="BPL2"><span class="unit"> inches</span>
+                <input id="BPL2" value = 13.5><span class="unit"> inches</span>
             </div>
             <div class="input-group">
                 <label>bearing plate thickness (t): </label>
-                <input id="BPT2"><span class="unit"> inches</span>
+                <input id="BPT2" value = 2.25><span class="unit"> inches</span>
             </div>
             <div class="input-group">
                 <label>bearing plate hole diameter (c): </label>
-                <input id="BPHD2"><span class="unit"> inches</span>
+                <input id="BPHD2" value = 4.5><span class="unit"> inches</span>
             </div>
             <div class="input-group">
                 <label>anchor head diameter (d): </label>
-                <input id="AHD2"><span class="unit"> inches</span>
+                <input id="AHD2" value = 7.25><span class="unit"> inches</span>
             </div>
             <div class="input-group">
                 <label>cored hole diameter (CHD): </label>
-                <input id="CHD"><span class="unit"> inches</span>
+                <input id="CHD" value = 8.625><span class="unit"> inches</span>
             </div>
             <div class="input-group">
                 <label> concrete compressive stregth f 'c: </label>
-                <input id="FC"><span class="unit"> ksi</span>
+                <input id="FC" value = 4.0><span class="unit"> ksi</span>
             </div>
             <div class="input-group">
                 <label>bearing plate yield strength F'y: </label>
-                <input id="BPYS2"><span class="unit"> ksi</span>
+                <input id="BPYS2" value = 50><span class="unit"> ksi</span>
             </div>
             <div class="input-group">
                 <label>bearing stress reduction factor: </label>
-                <input id="BSRF2"><span class="unit"> (0.9)</span>
+                <input id="BSRF2" value = 0.9><span class="unit"> (0.9)</span>
             </div>
             <div class="input-group">
                 <label>allowable concrete bearing stress: </label>
-                <input id="ABCS"><span class="unit"> ksi</span>
+                <input id="ABCS" value = 2.4><span class="unit"> ksi</span>
             </div>
             <div id="bearing-image" class="container">
                 <img id="bearing-imagepng" src="../Images/BearingPlate(Rev).png" alt="Bearing Plate (Rev)">
@@ -84,11 +84,13 @@
         <p>allowable bending stress: <span id="abs"></span></p>
         <p>S required: <span id="Sreq2"></span></p>
         <p>S provided: <span id="Sprov2"></span></p>
-        <p style="font-size: 16px; font-weight: bold;"><mark>Bearing Plate Design Status</mark><span id="plp2"></span></p>
+        <p style="font-size: 16px; font-weight: bold; color: orange;">Bearing Plate Design Status<span id="plp2"></span></p>
     </div>
     <script src="case2.js"></script>
 </body>
 <div id="footer">
+    <div><button class = "nav-button" onClick="window.print()">Print this page
+    </button></div>
     <p>Simon Worku & Samuael Tadele</p>
     <p>&copy; 2024 Bearing Plate Support Calculator</p>
 </div>
