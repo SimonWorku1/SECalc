@@ -59,9 +59,6 @@ document.getElementById("mySubmit2").onclick = function(){
         document.getElementById("plp2").style.backgroundColor = "green";
         document.getElementById("plp2").style.fontWeight = "bold";
         document.getElementById("plp2").style.marginLeft = "10px";
-        document.getElementById("plp2").style.
-            Button name
-        </button>
     } 
     else {
         plp2 = " Provide Larger Plate";
