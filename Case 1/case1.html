@@ -19,47 +19,58 @@
     <h1>Case 1 (Steel Plate Support)</h1>
 
     <br>
-    <div id="div_inputs">
-        <div class="input-group">
-            <label>factored test load: </label>
-            <input id="FTL" value =200><span class="unit" > kips</span>
+        <div id="div_inputs">
+            <div class="input-group">
+                <label for="FTL">Factored test load:</label>
+                <input id="FTL" value="200" type="text" placeholder="Enter the factored test load" title="Factored test load">
+                <span class="unit"> kips</span>
+            </div>
+            <div class="input-group">
+                <label for="BPW">Bearing plate width (f):</label>
+                <input id="BPW" value="18" type="text" placeholder="Enter the bearing plate width" title="Bearing plate width (f)">
+                <span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label for="BPL">Bearing plate length (b):</label>
+                <input id="BPL" value="12" type="text" placeholder="Enter the bearing plate length" title="Bearing plate length (b)">
+                <span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label for="BPT">Bearing plate thickness (t):</label>
+                <input id="BPT" value="2.5" type="text" placeholder="Enter the bearing plate thickness" title="Bearing plate thickness (t)">
+                <span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label for="BPHD">Bearing plate hole diameter (c):</label>
+                <input id="BPHD" value="3.75" type="text" placeholder="Enter the bearing plate hole diameter" title="Bearing plate hole diameter (c)">
+                <span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label for="CL">CL to CL spacing between wedge plates (s):</label>
+                <input id="CL" value="17" type="text" placeholder="Enter the CL to CL spacing" title="CL to CL spacing between wedge plates (s)">
+                <span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label for="AHD">Anchor head diameter (d):</label>
+                <input id="AHD" value="5" type="text" placeholder="Enter the anchor head diameter" title="Anchor head diameter (d)">
+                <span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label for="BPYS">Bearing plate yield strength:</label>
+                <input id="BPYS" value="50" type="text" placeholder="Enter the bearing plate yield strength" title="Bearing plate yield strength">
+                <span class="unit"> ksi</span>
+            </div>
+            <div class="input-group">
+                <label for="BSRF">Bearing stress reduction factor:</label>
+                <input id="BSRF" value="0.9" type="text" placeholder="Enter the bearing stress reduction factor" title="Bearing stress reduction factor">
+                <span class="unit"> (0.9)</span>
+            </div>
+            <div id="bearing-image" class="container">
+                <img id="bearing-imagepng" src="../Images/BearingPlate(Rev).png" alt="Bearing Plate (Rev)">
+            </div>
+            <button id="mySubmit">submit</button>
         </div>
-        <div class="input-group">
-            <label>bearing plate width (f): </label>
-            <input id="BPW" value = 18><span class="unit"> inches</span>
-        </div>
-        <div class="input-group">
-            <label>bearing plate length (b): </label>
-            <input id="BPL" value = 12><span class="unit"> inches</span>
-        </div>
-        <div class="input-group">
-            <label>bearing plate thickness (t): </label>
-            <input id="BPT" value = 2.5><span class="unit"> inches</span>
-        </div>
-        <div class="input-group">
-            <label>bearing plate hole diameter (c): </label>
-            <input id="BPHD" value = 3.75><span class="unit"> inches</span>
-        </div>
-        <div class="input-group">
-            <label>CL to CL spacing between wedge plates (s): </label>
-            <input id="CL" value = 17><span class="unit"> inches</span>
-        </div>
-        <div class="input-group">
-            <label>anchor head diameter (d): </label>
-            <input id="AHD" value = 5><span class="unit"> inches</span>
-        </div>
-        <div class="input-group">
-            <label>bearing plate yield strength: </label>
-            <input id="BPYS" value = 50><span class="unit"> ksi</span>
-        </div>
-        <div class="input-group">
-            <label>bearing stress reduction factor: </label>
-            <input id="BSRF" value = 0.9><span class="unit"> (0.9)</span>
-        </div>
-        <div id="bearing-image" class="container">
-            <img id="bearing-imagepng" src="../Images/BearingPlate(Rev).png" alt="Bearing Plate (Rev)">
-        </div>
-        <button id="mySubmit">submit</button>
+        
     </div>
     <div id="div2">
         <br>
