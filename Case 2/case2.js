@@ -59,12 +59,33 @@ document.getElementById("mySubmit2").onclick = function(){
         document.getElementById("plp2").style.backgroundColor = "green";
         document.getElementById("plp2").style.fontWeight = "bold";
         document.getElementById("plp2").style.marginLeft = "10px";
-    } else {
+        document.getElementById("plp2").style.
+            Button name
+        </button>
+    } 
+    else {
         plp2 = " Provide Larger Plate";
-        document.getElementById("plp").style.color = "white";
-        document.getElementById("plp").style.backgroundColor = "red";
-        document.getElementById("plp").style.fontWeight = "bold";
-        document.getElementById("plp").style.marginLeft = "10px";
+        document.getElementById("plp2").style.color = "white";
+        document.getElementById("plp2").style.backgroundColor = "red";
+        document.getElementById("plp2").style.fontWeight = "bold";
+        document.getElementById("plp2").style.marginLeft = "10px";
     }
     document.getElementById("plp2").textContent = plp2;
+
+    let css;
+    if(ABCS >= cs){
+        css = "OK";
+        document.getElementById("css").style.color = "white";
+        document.getElementById("css").style.backgroundColor = "green";
+        document.getElementById("css").style.fontWeight = "bold";
+        document.getElementById("css").style.marginLeft = "10px";
+    }
+    else{
+        css = "NG";
+        document.getElementById("css").style.color = "white";
+        document.getElementById("css").style.backgroundColor = "red";
+        document.getElementById("css").style.fontWeight = "bold";
+        document.getElementById("css").style.marginLeft = "10px";
+    }
+    document.getElementById("css").textContent = css;
 }

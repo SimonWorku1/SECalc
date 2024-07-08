@@ -13,7 +13,7 @@
             <a href="../SEC/SECalc.html">
                 <button class="nav-button">BACK</button>
             </a>
-            <p style="font-weight: bold; font-size: 20px; font-style: italic; margin-top: 5px;">To go to case 1 go to the home page</p>
+           <p style="font-weight: bold; font-size: 20px; font-style: italic; margin-top: 5px;">To go to case 1 go to the home page</p>
         </div>
         <br>
         <h1>Case 2 (Concrete / Shotcrete Support)</h1>
@@ -22,7 +22,7 @@
         <div id="div_inputs">
             <div class="input-group">
                 <label>factored test load: </label>
-                <input id="FTL2" value = 0><span class="unit"> kips</span>
+                <input id="FTL2" value = 200><span class="unit"> kips</span>
             </div>
             <div class="input-group">
                 <label>bearing plate width (f): </label>
@@ -84,9 +84,9 @@
         <p>allowable bending stress: <span id="abs"></span></p>
         <p>S required: <span id="Sreq2"></span></p>
         <p>S provided: <span id="Sprov2"></span></p>
-        <p style="font-size: 16px; font-weight: bold; color: orange;">Bearing Plate Design Status<span id="plp2"></span></p>
-    </div>
-    <script src="case2.js"></script>
+        <p style="font-size: 16px; font-weight: bold; color: orange;">Bearing Plate Design Status<span class = "tooltip" id="plp2"></span></p>
+        <p style="font-size: 16px; font-weight: bold; color: orange;">Concrete Strength Status<span id="css"></span></p>
+   </div> <script src="case2.js"></script>
 </body>
 <div id="footer">
     <div><button class = "nav-button" onClick="window.print()">Print this page
