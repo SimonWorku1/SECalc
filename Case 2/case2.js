@@ -21,7 +21,7 @@ document.getElementById("mySubmit2").onclick = function(){
     document.getElementById("cs").textContent = cs.toFixed(2) + " ksi";
 
     nbsobp = FTL2/((Math.PI/4)*((parseFloat(AHD2)+parseFloat(BPT2))**2 - BPHD2**2));
-    document.getElementById("nbsobp").textContent = nbsobp.toFixed(2) + " ";
+    document.getElementById("nbsobp").textContent = nbsobp.toFixed(2) + " ksi";
 
     let MaxBP, MinBP;
     if (BPW2 >= BPL2){
@@ -32,10 +32,10 @@ document.getElementById("mySubmit2").onclick = function(){
         MinBP = BPW2;
     }
     boc = (cs*((MaxBP*MaxBP/2 *MaxBP/4)-((Math.PI*CHD*CHD/8)*((CHD/2)*(0.4244)))));
-    document.getElementById("boc").textContent = boc.toFixed(2) + " ";
+    document.getElementById("boc").textContent = boc.toFixed(2) + " kip";
 
     bosp = -nbsobp*(Math.PI*((parseFloat(AHD2) + parseFloat(BPT2))**3)/8)*0.2122065+((nbsobp*Math.PI)/8)*(BPHD2**3)*0.2122065;
-    document.getElementById("bosp").textContent = bosp.toFixed(2) + " ";
+    document.getElementById("bosp").textContent = bosp.toFixed(2) + " kip";
 
     macobp = boc + bosp;
     document.getElementById("macobp").textContent = macobp.toFixed(2) + " k-in";
@@ -55,34 +55,43 @@ document.getElementById("mySubmit2").onclick = function(){
     let plp2;
     if(Sprov2 > Sreq2){
         plp2 = "Plate size is adequate";
+        let element = document.getElementById("plp2");
         document.getElementById("plp2").style.color = "white";
         document.getElementById("plp2").style.backgroundColor = "green";
         document.getElementById("plp2").style.fontWeight = "bold";
         document.getElementById("plp2").style.marginLeft = "10px";
-    } 
-    else {
+        element.title = "GOOD!"; // Add hover note
+    } else {
         plp2 = " Provide Larger Plate";
+        let element = document.getElementById("plp2");
         document.getElementById("plp2").style.color = "white";
         document.getElementById("plp2").style.backgroundColor = "red";
         document.getElementById("plp2").style.fontWeight = "bold";
         document.getElementById("plp2").style.marginLeft = "10px";
+        element.title = "Increase Plate thickness or Reduce Test Load"; // Add hover note
+
     }
     document.getElementById("plp2").textContent = plp2;
 
     let css;
     if(ABCS >= cs){
-        css = "OK";
+        css = "Concrete Strength is adequate";
+        let element = document.getElementById("css");
         document.getElementById("css").style.color = "white";
         document.getElementById("css").style.backgroundColor = "green";
         document.getElementById("css").style.fontWeight = "bold";
         document.getElementById("css").style.marginLeft = "10px";
+        element.title = "GOOD!"; // Add hover note
     }
     else{
-        css = "NG";
+        css = "Concrete Strength is inadquate";
+        let element = document.getElementById("css");
         document.getElementById("css").style.color = "white";
         document.getElementById("css").style.backgroundColor = "red";
         document.getElementById("css").style.fontWeight = "bold";
         document.getElementById("css").style.marginLeft = "10px";
+        element.title = "Increase Concrete Strength or Increase Bearing Plate Size"; // Add hover note
     }
     document.getElementById("css").textContent = css;
 }
+

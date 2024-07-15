@@ -48,16 +48,22 @@ document.getElementById("mySubmit").onclick = function() {
     let plp;
     if (sop <= asop && sreq <= sprov) {
         plp = "Plate size is adequate";
+        let element = document.getElementById("plp");
         document.getElementById("plp").style.color = "white";
         document.getElementById("plp").style.backgroundColor = "green";
         document.getElementById("plp").style.fontWeight = "bold";
         document.getElementById("plp").style.marginLeft = "10px";
+        element.title = "GOOD!"; // Add hover note
     } else {
         plp = " Provide Larger Plate";
+        let element = document.getElementById("plp");
         document.getElementById("plp").style.color = "white";
         document.getElementById("plp").style.backgroundColor = "red";
         document.getElementById("plp").style.fontWeight = "bold";
         document.getElementById("plp").style.marginLeft = "10px";
+        element.title = "Increase Plate thickness or Reduce Test Load"; // Add hover note
+
     }
     document.getElementById("plp").textContent = plp;
 };
+

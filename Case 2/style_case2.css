@@ -36,10 +36,28 @@ header h1 {
     margin: 20px 0;
 }
 
-.nav-button {
+.nav-button2 {
+    padding: 10px 10px;
+    background-color: #987474;
+    color: #ece9e9;
+    border: none;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-button2:hover {
+    background-color: #699c73;
+    transform: scale(1.05);
+}
+
+.nav-button1 {
     padding: 10px 20px;
-    background-color: #4c4c4c;
-    color: #ffffff;
+    background-color: #c2bfbf;
+    color: #e7ece8;
     border: none;
     border-radius: 4px;
     font-size: 16px;
@@ -47,10 +65,34 @@ header h1 {
     margin: 0 10px;
     transition: background-color 0.3s, transform 0.3s;
 }
+.nav-button1 {
+    position: relative; /* Ensure the pseudo-element is positioned relative to the button */
+}
 
-.nav-button:hover {
-    background-color: #6c6c6c;
-    transform: scale(1.05);
+.nav-button1:hover {
+    background-color: #8B8b8B;
+    transform: scale(1.1);
+}
+
+.nav-button1:hover::after {
+    content: "To switch to Case 1 press the 'BACK' Button";
+    position: absolute;
+    top: 100%; /* Position below the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333; /* Background color for the note */
+    color: #fff; /* Text color for the note */
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap; /* Prevents the text from wrapping */
+    z-index: 10; /* Ensures the note appears above other elements */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s; /* Smooth transition for showing the note */
+    pointer-events: none; /* Ensures the note does not interfere with mouse events */
+}
+
+.nav-button1:hover::after {
+    opacity: 1; /* Show the note on hover */
 }
 
 #div_inputs, #div2 {
@@ -163,40 +205,58 @@ mark {
     border-radius: 10px;
 }
 
-#footer {
+#footer1 {
     background-color: #333;
     color: #fff;
-    text-align: center;
     padding: 10px 20px;
     bottom: 0;
+    text-align: right;
     right: 0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-/* Trying tooltips */
-.tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-  }
-  
-  .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
+
+#footer {
+    background-color: #333;
     color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-  
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-  }
-  
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-  }
+    padding: 10px 20px;
+    bottom: 0;
+    text-align: left;
+    right: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.center-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.label {
+    flex: 30;
+    text-align: left;
+    font-weight: 100;
+    font-style: oblique;
+}
+.result {
+    flex: 10;
+    text-align: left;
+    font-weight: 100;
+    font-style: oblique;
+}
+
+.status {
+    flex: 10;
+    text-align: left;
+    font-weight: 800;
+    font-style: bold;
+    color:orange
+
+}
 
 
-/*-----------------*/
+
+
+
+
+
