@@ -36,24 +36,8 @@ header h1 {
     margin: 25px 0;
 }
 
-.nav-button {
-    padding: 10px 20px;
-    background-color: #4c4c4c;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: background-color 0.3s, transform 0.3s;
-}
 
-.nav-button:hover {
-    background-color: #6c6c6c;
-    transform: scale(1.05);
-}
-
-#div_inputs, #div2 {
+#div_inputs {
     background-color: #2e2e2e;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -61,6 +45,17 @@ header h1 {
     margin: 20px auto;
     max-width: 600px;
 }
+ #div2 {
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 20px auto;
+    width: 50%;
+    
+    
+}
+
 
 .input-group {
     display: flex;
@@ -101,6 +96,8 @@ header h1 {
 }
 
 
+
+
 .unit {
     margin-left: 5px;
     color: #b0b0b0;
@@ -126,6 +123,15 @@ h1 {
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+h2,h3,h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
     text-align: center;
     text-transform: uppercase;
     color: #ffffff;
@@ -174,17 +180,75 @@ mark {
     color: #ffffff;
 }
 
-.container img {
+#image {
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: 10px;
+}
+
+.nav-button1 {
+    padding: 10px 20px;
+    background-color: #c2bfbf;
+    color: #e7ece8;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.nav-button1 {
+    position: relative; /* Ensure the pseudo-element is positioned relative to the button */
+}
+
+.nav-button1:hover {
+    background-color: #8B8b8B;
+    transform: scale(1.1);
+}
+
+.nav-button1:hover::after {
+    content: "To switch to the main menu,press the 'BACK' Button";
+    position: absolute;
+    top: 100%; /* Position below the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333; /* Background color for the note */
+    color: #fff; /* Text color for the note */
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap; /* Prevents the text from wrapping */
+    z-index: 10; /* Ensures the note appears above other elements */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s; /* Smooth transition for showing the note */
+    pointer-events: none; /* Ensures the note does not interfere with mouse events */
+}
+
+.nav-button1:hover::after {
+    opacity: 1; /* Show the note on hover */
+}
+
+.nav-button2 {
+    padding: 10px 10px;
+    background-color: #987474;
+    color: #ece9e9;
+    border: none;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.nav-button2:hover {
+    background-color: #699c73;
+    transform: scale(1.05);
 }
 
 
 #footer {
     background-color: #333;
     color: #fff;
-    text-align: center;
+    text-align: left;
     padding: 10px 20px;
     bottom: 0;
     right: 0;
