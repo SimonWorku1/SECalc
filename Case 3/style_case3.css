@@ -87,6 +87,12 @@ header h1 {
     background-color: #3c3c3c;
     color: #e0e0e0;
 }
+#vrtype{
+    margin-left: 200px;
+}
+#numlegs{
+    margin-left: 105px;
+}
 
 
 .input-group .empty { 

@@ -1,5 +1,7 @@
 document.getElementById("non-isolated").style.display = "none";
-        document.getElementById("isolated").style.display = "block";
+document.getElementById("isolated").style.display = "block";
+document.getElementById("non-iso").style.display = "none";
+document.getElementById("iso").style.display = "block";
 function myFunction() {
     // Retrieving input values
    // Retrieving input values
@@ -51,10 +53,14 @@ function myFunction() {
     if(skt == "Isolated Shear Key"){
         document.getElementById("non-isolated").style.display = "none";
         document.getElementById("isolated").style.display = "block";
+        document.getElementById("non-iso").style.display = "none";
+        document.getElementById("iso").style.display = "block";
     }
     else{
         document.getElementById("isolated").style.display = "none";
         document.getElementById("non-isolated").style.display = "block";
+        document.getElementById("iso").style.display = "none";
+        document.getElementById("non-iso").style.display = "block";
 
     }
     
