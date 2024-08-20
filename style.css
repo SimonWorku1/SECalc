@@ -69,3 +69,11 @@ footer {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+
+.footer2 {
+    font-size: 12px;
+    font-weight: bold;
+    color:rgb(248, 247, 245);
+    text-align: right
+}
+

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live-Load Distribution for Abutment</title>
+
+<body>
+
+    <link href="../Case 5/style_case5.css" rel="stylesheet" type="text/css">
+    <script src="../Case 5/case5.js"></script>
+</head>
+<body>
+    <div id="header-buttons">
+        <a href="../index.html">
+            <button class="nav-button1">BACK</button>
+        </a>
+    </div>
+
+    <h1>Live-Load Distribution for Abutment</h1>
+
+    <div id="div_inputs">
+
+        <div class="selectColor">
+            <label for="pjct">Project Name/ID: </label>
+            <input value="07-12345" id="pjct" type="text" placeholder="Enter structure name">
+        </div>
+        <div class="selectColor">
+            <label for="sname">Structure Name: </label>
+            <input value="ABC Bridge UC" id="sname" type="text" placeholder="Enter structure name">
+        </div>
+
+    </div>     
+
+<div class="input-group">
+    
+    <div id="div_inputs">
+        <br> 
+        
+        <div class="input-group">
+            <label for="bof">Bottom of footing Elevation, B <span class="subscript">ftg</span>:</label>
+            <input id="bof" value="22" type="text" placeholder="Enter Bottom of Ftg Elev">
+            <span class="unit"> ft</span>
+        </div>
+
+        <div class="input-group">
+            <label for="tod">Top of deck Elevation, T <span class="subscript">brg</span>:</label>
+            <input id="tod" value="55" type="text" placeholder="Enter Top of deck Elev">
+            <span class="unit"> ft</span>
+        </div>
+
+        <div class="input-group">
+            <label for="tof">Thickness of footing, T <span class="subscript">ftg</span>:</label>
+            <input id="tof" value="2.5" type="text" placeholder="Enter Top of footing Elev">
+            <span class="unit"> ft</span>
+        </div>
+
+        <div class="input-group">
+            <label for="wob">Width of bridge, W <span class="subscript">brg</span>:</label>
+            <input id="wob" value="40" type="text" placeholder="Enter Width of bridge">
+            <span class="unit"> ft</span>
+        </div>
+
+        <div class="input-group">
+            <label for="ed">Edge distance to first outside lane, ed:</label>
+            <input id="ed" value="1" type="text" placeholder="Enter Edge distance to first outside lane">
+            <span class="unit"> ft</span>
+        </div>
+
+        <div class="input-group">
+            <label for="alpha">Bridge Skew angle, &alpha; :</label>
+            <input id="alpha" value="40" type="text" placeholder="Enter Bridge Skew angle">
+            <span class="unit"> degrees</span>
+        </div>
+
+        <div class="input-group">
+            <label for="theta">Load distribution angle, &theta; :</label>
+            <input id="theta" value="45" type="text" placeholder="Enter Load distribution angle">
+            <span class="unit"> degrees</span>
+        </div>
+
+        <div class="input-group">
+            <label for="dc">Superstructure dead load, DC:</label>
+            <input id="dc" value="150" type="text" placeholder="Enter superstructure dead load">
+            <span class="unit"> kip</span>
+        </div>
+
+        <div class="input-group">
+            <label for="dw">Additional dead load, DC:</label>
+            <input id="dw" value="20" type="text" placeholder="Enter Additional dead load">
+            <span class="unit"> kip</span>
+        </div>
+
+        <div class="input-group">
+            <label for="lltrk">Design truck Single truck Load, HL-93 Truck:</label>
+            <input id="lltrk" value="70" type="text" placeholder="Enter HL-93 Truck Load">
+            <span class="unit"> kip</span>
+        </div>
+
+        <div class="input-group">
+            <label for="lllane">Design lane Load, HL-93 Lane:</label>
+            <input id="lllane" value="50" type="text" placeholder="Enter HL-93 Lane load">
+            <span class="unit"> kip</span>
+        </div>
+
+        <div class="input-group">
+            <label for="prmt">Permit truck Single truck Load, P-15 Truck:</label>
+            <input id="prmt" value="50" type="text" placeholder="Enter P-15 Truck load">
+            <span class="unit"> kip</span>
+        </div>
+
+        <br>
+        
+        <button onclick="myFunction()" id="mySubmit">submit</button>
+    </div>    
+
+    <div id="div_inputs">
+
+            
+        <div id="abutment-detail1" class="container">
+            <img id="abutment-details1" src="../Images/Live-Load on Abutment.jpg" alt="Live-Load on Abutment">
+        </div>
+        <br><br><br>
+        <div id="abutment-detail2" class="container">
+            <img id="abutment-details2" src="../Images/Load Distribution.jpg" alt="Load Distribution">
+        </div>
+   
+</div>
+    </div>
+
+
+    <br>
+
+    <div id="div2">
+        <!-- <h1>Project: <span id="pjct"></span></h1> -->
+        <!-- <h2>Structure Name: <span id="sname"></span></h2> -->
+        <!-- <h3>Abutment #: <span id="abtmt"></span></h3> -->
+        <br>
+        <h1>Results:</h1>
+
+        <p class="center-container">
+            <span class="label"> Maximum LL and PL lane widths :</span>
+            <span class="result" id="llTopDistanceList">Result</span>
+        </p>
+        
+        <p class="center-container">
+            <span class="label"> Equivalent Live-Load lane list :</span>
+            <span class="result" id="equivalentLLLane">Result</span>
+        </p>
+
+        <p class="center-container">
+            <span class="label">Maximum Live-Load distribution lane :</span>
+            <span class="result" id="maxLL">Result</span>
+        </p>
+
+        <p class="center-container">
+            <span class="label">Maximum Permit-Load distribution lane  :</span>
+            <span class="result" id="maxPL">Result</span>
+        </p>
+
+        <p class="center-container">
+            <span class="label">Maximum Live-Load :</span>
+            <span class="result" id="DesignLL">Result</span>
+        </p>
+    
+        <p class="center-container">
+            <span class="label">Maximum Permit-Load :</span>
+            <span class="result" id="PermitLL">Result</span>
+        </p>
+
+        <!-- <p id="wskw"></p> 
+        <p id="habut"></p>
+        <p id="n"></p> -->
+
+
+    </div>
+
+    <script src="case5.js"></script>
+    
+    <div id="footer">
+        <button class="nav-button2" onClick="window.print()">Print this page</button>
+        <p class="footer2">Simon Worku & Samuel Tadele</p>
+        <p class="footer2">&copy; 2024 Miscellaneous Design / Check</p>
+    </div>
+</body>
+</html>

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shear Key Design</title>
-    <link href="../Case 3/style_case3.css" rel="stylesheet" type="text/css">
-    <script src="../Case 3/case3.js"></script>
+    <link href="../Case 4/style_case4.css" rel="stylesheet" type="text/css">
+    <script src="../Case 4/case4.js"></script>
 </head>
 <body>
     <div id="header-buttons">
@@ -14,45 +14,53 @@
         </a>
     </div>
 
-    <br>
     <h1>Shear Key Design</h1>
 
-    <br>
+    <div id="div_inputs">
+
+        <div class="selectColor">
+            <label for="pjct">Project Name/ID  :</label>
+            <input value="07-12345" id="pjct" type="text" placeholder="Enter structure name">
+        </div>
+        <div class="selectColor">
+            <label for="sname">Structure Name. : </label>
+            <input value="ABC Bridge UC" id="sname" type="text" placeholder="Enter structure name">
+        </div>
+        <div class="selectColor">
+            <label for="abtmt">  Abutment No.  :</label>
+            <input class="selectColor" value = "Abutment No. 1" id="abtmt"  type="text" placeholder="Enter abutment No." >
+        </div>
+
+        <div class="selectColor">
+            <label for="skt">Shear Key Type:</label>
+                <select onchange= "selectSKT()" name="Shear Key Type" id="skt">
+                <option value="Isolated Shear Key">Isolated Shear Key</option>
+                <option value="Non Isolated Shear Key">Non Isolated Shear Key</option>
+            </select>  
+        </div>
+        
+
+    </div>     
+    <div class="input-group">
+
         <div id="div_inputs">
-             <!-- <div class="input-group">
-                <label for="pjct">Project: </label>
-                <input value = "simon" id="pjct" type="text" placeholder="Enter project name" >
-            </div>
-            <div class="input-group">
-                <label for="sname">Structure Name: </label>
-                <input value = "simon3" id="sname" type="text" placeholder="Enter structure name" >
-            </div>
-            <div class="input-group">
-                <label for="abtmt">Abutment #:</label>
-                <input value = "simon2" id="abtmt"  type="text" placeholder="Enter abutment #" >
-            </div>  -->
-            <br>
+            <h4>Input Page No. 1</h4>
+            
             <div class="input-group">
                 <label for="ftype">Footing Type:</label>
 
-                <select name="Footing Type" id="ftype">
+                <select onchange="selectFTG()" name="Footing Type" id="ftype">
                     <option value="Pile Footing">Pile Footing</option>
                     <option value="Spread Footing">Spread Footing</option>
                 </select>
                 
             </div>
-            <div class="input-group">
-                <label for="skt">Shear Key Type:</label>
 
-                <select  name="Shear Key Type" id="skt">
-                    <option value="Isolated Shear Key">Isolated Shear Key</option>
-                    <option value="Non Isolated Shear Key">Non Isolated Shear Key</option>
-                </select>
-                
-            </div>
+
             <div class="input-group">
                 <label for="vsrebar">Vertical Shear Rebar:</label>
-                <select name="Vertical Shear Rebar" id="vsrebar">
+                <select  name="Vertical Shear Rebar" id="vsrebar">
+                    <option value="select">Select Bar Size</option>
                     <option value="0">#3</option>
                     <option value="1">#4</option>
                     <option value="2">#5</option>
@@ -76,6 +84,8 @@
                 </select>
                 
             </div>
+
+            
 
             <div id = "iso1" class="input-group">
                  <!--******NOTE****** when making .js for this input and the # of legs of vert rebar, check spreadsheet for instructions-->
@@ -105,6 +115,7 @@
             <div class="input-group">
                 <label for="hsrebar">Horizontal Shear Rebar:</label>
                 <select name="Horizontal Shear Rebar" id="hsrebar">
+                    <option value="select">Select Bar Size; </option>
                     <option value="0">#3</option>
                     <option value="1">#4</option>
                     <option value="2">#5</option>
@@ -128,7 +139,7 @@
             </select>
                
             </div>
-            <br> 
+        
             <div class="input-group">
                 <label for="wwt">Wing Wall Thickness, B <span class = "subscript">ww</span>:</label>
                 <input id="wwt" value="1.167" type="text"  >
@@ -136,7 +147,7 @@
             </div>
             <div class="input-group">
                 <label for="hww">Height of Wing Wall, H <span class = "subscript">ww</span>:</label>
-                <input id="hww" value="3135" type="text" >
+                <input id="hww" value="31.35" type="text" >
                 <span class="unit"> ft</span>
             </div>
             <div class="input-group">
@@ -144,17 +155,13 @@
                 <input id="skbw" value="2.5" type="text" >
                 <span class="unit"> ft</span>
             </div>
+
             <div class="input-group">
                 <label for="skbl">Shear Key Base Length, SK <span class = "subscript">bl</span>:</label>
                 <input id="skbl" value="3.5" type="text" >
                 <span class="unit"> ft</span>
             </div>
-            <br>
-            <div class="input-group">
-                <label for="ppa"># of Piles Per Abutment, Np:</label>
-                <input id="ppa" value="23" type="text" >
-                
-            </div>
+
             <div class="input-group">
                 <label for="adl">Abutment Dead Load, P <span class = "subscript">dl</span>:</label>
                 <input id="adl" value="3254" type="text" >
@@ -165,8 +172,24 @@
                 <input id="ssdl" value="705" type="text" >
                 <span class="unit"> kip</span>
             </div>
+            
+
+        </div>
+
+
+        <div id="div_inputs">
+            <h4>Input Page No. 2</h4>
+          
+            <div id="pileftg">
+            
+                <div class="input-group">
+                    <label for="ppa"># of Piles Per Abutment, Np:</label>
+                    <input id="ppa" value="23" type="text" >
+                </div>
+            </div>
+
             <div class="input-group">
-                <label for="hef">1/2 Heigh of Expansion Filler, a <span class = "subscript"></span>:</label>
+                <label for="hef">1/2 Height of Expansion Filler, a <span class = "subscript"></span>:</label>
                 <input id="hef" value="6" type="text" >
                 <span class="unit"> in</span>
             </div>
@@ -175,11 +198,18 @@
                 <input id="tslsk" value="6" type="text" >
                 <span class="unit"> in</span>
             </div>
-            <div class="input-group">
-                <label for="uscap">Ult. Shear Capacity of Abt. Piles, kp <span class = "subscript"></span>:</label>
-                <input id="uscap" value="30" type="text" >
-                <span class="unit"> kip</span>
+
+
+            <div id="pileshr">
+            
+                <div class="input-group">
+                    <label for="uscap">Ult. Shear Capacity of Abut Piles, <span class = "subscript"></span>:</label>
+                    <input id="uscap" value="30" type="text" >
+                    <span class="unit"> kip</span>
+                
+                </div>
             </div>
+
             <div class="input-group">
                 <label for="sys">Steel Yielding Strength f <span class = "subscript">y</span>:</label>
                 <input id="sys" value="60" type="text" >
@@ -206,7 +236,7 @@
                 <span class="unit"> ksi</span>
             </div>
             <div class="input-group">
-                <label for="af">Alfa Factor <span class = "subscript"></span>:</label>
+                <label for="af">Alfa Factor: &alpha;<span class = "subscript"></span>:</label>
                 <input id="af" value="0.75" type="text" >
                 <span class="unit"></span>
             </div>
@@ -223,16 +253,22 @@
 
             <button onclick = "myFunction()" id="mySubmit">submit</button>
         </div>
-            
-            
-        
     
+    </div>      
     
+
         <div id = "div2">
         
-        <!--<h1>Results for <span id = "pjct"></span>:</h1>
-        <h2>Structure Name: <span id = "sname"></span> </h2>
-        <h3>Abutment #: <span id= "abtmt"></span></h3> -->
+     
+        <h1>Results:</h1>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Centered Result</title>
+            
+        </head>
+        <body>
+
         <div id = "iso">
             <h1>Isolated Shear Key</h1>
             <img id="image"  src="../Images/Isolated.png" alt="Isolated">
@@ -241,27 +277,64 @@
             <h1>Non-Isolated Shear Key</h1>
             <img id="image"  src="../Images/Non-Isolated.png" alt="Non-Isolated">
         </div>
-        <p>Shear Capacity F <span class = "subscript">sk</span>: <span id="sc"></span></p>
-        <p>Vertical Rebar Area, A <span class = "subscript">sk</span>: <span id="vra"></span></p>
-        <p>Horizontal Rebar Area, A<span class = "subscript">sh</span>: <span id="hra"></span></p>
+
+
+        <p class="center-container">
+            <span class="label">Shear Capacity F <span class = "subscript">sk</span>:</span>
+            <span class="result" id="sc">Result</span></p>
+
+        <p class="center-container">
+            <span class="label">Vertical Rebar Area, A <span class = "subscript">sk</span>:</span>
+            <span class="result" id="vra">Result</span></p>
+
+        <p class="center-container">
+            <span class="label">Horizontal Rebar Area, A <span class = "subscript">sh</span>:</span>
+            <span class="result" id="hra">Result</span></p>
 
         <div id = "isolated">
-        
-        <p>Number of Vertical Rebars: <span id="nvr"></span></p>
-        <p>Number of Horizontal Rebars: <span id="nhr"></span></p>
-        <p>Tension developm     ent length, l  <span class = "subscript">d</span>: <span id="tdl"></span></p>
-        <p>Lmin, hooked (Std. Hooked Hanger Bars): <span id="lhhh"></span></p>
-        <p>Lmin, headed: <span id="lmh"></span></p>
+
+        <p class="center-container">
+            <span class="label">Number of Vertical Rebars:</span>
+            <span class="result" id="nvrl">Result</span><span class="result1" id="nvr"></span></p>
+
+        <p class="center-container">
+            <span class="label">Number of Horizontal Rebars: </span>
+            <span class="result" id="nhrl">Result</span><span class="result1" id="nhr"></span></p>
+
+        <p class="center-container">
+            <span class="label">Tension development length, l <span class = "subscript">d</span>:</span>
+            <span class="result" id="tdl">Result</span></p>
+
+        <p class="center-container">
+            <span class="label" id="lhhhName"></span>
+            <span class="result" id="lhhh"></span></p>
+
+        <p class="center-container">
+            <span class="label" id="lmhName"></span>
+            <span class="result" id="lmh"></span></p>
+
         </div>
 
         <div id = "non-isolated">
+
+        <p class="center-container">
+            <span class="label">Number of Vertical Rebars: </span>
+            <span class="result" id="nvrl2">Result</span><span id="nvr2"></span></p>
+
+        <p class="center-container">
+            <span class="label">Number of Horizontal Revars: </span>
+            <span class="result" id="nhrl2">Result</span><span id="nhr2"></span></p>
         
-        <p>Number of Vertical Rebars: <span id="nvr2"></span></p>
-        <p>Number of Horizontal Revars: <span id="nhr2"></span></p>
-        <p>Tension development length, l  <span class = "subscript">d</span>: <span id="tdl2"></span></p>
-        <p>Non-Iso. Shear Key Condition 1: <span id="niskc"></span></p>
-        <p>Hook development length, l <span class = "subscript">dh</span>: <span id="hdl"></span></p>
-        <p>Non-Iso. Shear Key Condition 2: <span id="niskc2"></span></p>
+        <p class="center-container">
+            <span class="label">Tension development length, l <span class = "subscript">d</span>:</span>
+            <span class="result" id="tdl2">Result</span></p>
+    
+        <p class="center-container">
+            <span class="label">Vertical Rebar development length, l <span class = "subscript">dh</span>:</span>
+            <span class="result" id="hdl">Result</span></p>
+   
+        <!-- <p>Non-Iso. Shear Key Condition 1: <span id="niskc"></span></p> -->
+        <!-- <p>Non-Iso. Shear Key Condition 2: <span id="niskc2"></span></p> -->
         </div>
         </div>
         
@@ -270,15 +343,13 @@
         
     
 
-    <script src="case3.js"></script>
+    <script src="case4.js"></script>
 </body>
 <div id="footer">
     <button class = "nav-button2" onClick="window.print()">Print this page</button>
 
 
+    <span><p class="footer2"> Simon Worku & Samuael Tadele
+        <span><p class="footer2"> &copy; 2024 Miscellaneous Design / Check
 
-
-    <span><p style="font-size: 12px; font-weight: bold; color: rgb(248, 247, 245); text-align: right;"> Simon Worku & Samuael Tadele
-        <span><p style="font-size: 12px; font-weight: bold; color: rgb(248, 247, 245); text-align: right;"> &copy; 2024 Bearing Plate Check
-</div>
 </html>

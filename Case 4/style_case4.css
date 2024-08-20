@@ -51,8 +51,6 @@ header h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     padding: 20px;
     margin: 20px auto;
-
-    
     
 }
 
@@ -262,7 +260,94 @@ mark {
     border-top-right-radius: 10px;
 }
 
+.footer2 {
+    font-size: 12px;
+    font-weight: bold;
+    color:rgb(248, 247, 245);
+    text-align: right
+}
+
+
 .subscript{
     font-size: x-small;
     font-style: italic;
+}
+
+
+.center-container {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    text-align: right;
+    line-height: 20%;
+}
+.label {
+    flex: 30;
+    text-align: left;
+    font-weight: 100;
+    font-style: oblique;
+}
+.result {
+    
+    text-align: right;
+    font-weight: 100;
+    font-style: oblique;
+}
+
+.result1 {
+    
+    text-align: end;
+    font-weight: 100;
+    font-style: oblique;
+}
+
+.selectColor {
+    text-align: left;
+    font-weight: 1800;
+    font-style:oblique;
+    font-size:small ;
+   
+}
+
+.selectColor input {
+    text-align: left;
+    border-radius: 4px;
+    border: 1px solid #4c4c4c;
+    background-color: #3c3c3c;
+    color: #e0e0e0;
+    font-size:medium ;
+    margin-left: 20%;
+    color: #e0e0e0;
+    width: 250px; /* Set the width of the input field */
+    height: 15px; /* Set the height of the input field */
+    padding: 10px; /* Optional: Add padding inside the input field */
+    font-style:italic;
+    font-weight: 400;  
+}
+
+.selectColor label {
+    text-align: left;
+    font-size:medium ;
+    margin-right: 0%;
+    color: #e0e0e0;
+    width: 250px; /* Set the width of the input field */
+    height: 15px; /* Set the height of the input field */
+    padding: 10px; /* Optional: Add padding inside the input field */
+    font-style:italic;
+    font-weight: 400;
+
+}
+
+.selectColor select {
+    margin-left: 25%;
+    border-radius: 4px;
+    background-color: #3c3c3c;
+    color: #e0e0e0;
+    text-align: left;
+    font-size:medium ;
+    width: 250px; /* Set the width of the input field */
+    padding: 10px; /* Optional: Add padding inside the input field */
+    font-style:italic;
+    font-weight: 400;    
+   
 }

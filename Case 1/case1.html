@@ -3,22 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case 1</title>
+    <title>Bearing Plate</title>
     <link href="../Case 1/style_case1.css" rel="stylesheet" type="text/css">
-    <script src="../Case 2/case2.js"></script>
+    <script src="../Case 1/case1.js"></script>
 </head>
 <body>
     <div id="header-buttons">
-        <a href="../SEC/SECalc.html">
+        <a href="../index.html">
             <button class="nav-button1">BACK</button>
         </a>
-        <p style="font-weight: bold; font-size: 30px; font-style: NORMAL; margin-top: 5px;">CASE 1</p>
+     
+        
     </div>
 
-    <br>
-    <h1>(Steel Plate Support)</h1>
+    <h1>(Steel Bearing Plate)</h1>
 
-    <br>
+    <div id="div_inputs">
+
+        <div class="selectColor">
+            <label for="pjct">Project Name/ID : </label>
+            <input value="07-12345" id="pjct" type="text" placeholder="Enter structure name">
+        </div>
+        <div class="selectColor">
+            <label for="sname">Structure Name : </label>
+            <input value="ABC Bridge UC" id="sname" type="text" placeholder="Enter structure name">
+        </div>
+    </div>
+
+    <div id="div_inputs">
+   
+            <div class="input-group">
+                <label for="bptype">Bearing Plate Type:</label>
+
+                <select onchange= "selectBPT()" name="Bearing Plate Type" id="bpt">
+                <option>Select Bearing Plate Type</option>
+                <option value="Steel Plate Support">Steel Plate Support</option>
+                <option value="Concrete / Shotcrete Support">Concrete / Shotcrete Support</option>
+                </select>  
+            </div>
+        
+     <div id="sps">   
+        
+
+        <div id="div_inputs">
+
+            <label>Bearing plate on double soldier pile</label>
+            <div class="image-container">
+                
+                <img src="../Images/DoubleSoldierPileElev.png">
+                 <img src="../Images/DoubleSoldierPileSec.png">
+            </div>
+               
+        </div>
+
         <div id="div_inputs">
             <div class="input-group">
                 <label for="FTL">Factored test load:</label>
@@ -65,16 +102,18 @@
                 <input id="BSRF" style="font-size: small" value="0.9" type="text" placeholder="Enter the bearing stress reduction factor" title="Bearing stress reduction factor">
                 <span class="unit"> (0.9)</span>
             </div>
+             <button id="mySubmit">Submit</button>
+        </div>
+
+
+         <div id="div2">
+
             <div id="bearing-image" class="container">
                 <img id="bearing-imagepng" src="../Images/BearingPlate(Rev).png" alt="Bearing Plate (Rev)">
             </div>
-            <button id="mySubmit">submit</button>
-        </div>
+
         
-    </div>
-    <div id="div2">
-        <br>
-        <h1>Results 1:</h1>
+        <h1>Results:</h1>
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -129,18 +168,157 @@
             <p class="center-container">
                 <span class="status">Bearing Plate Design Status:</span> 
                 <span id = "plp" style="margin-left: 30px;"></span></p>
-        
+    
+
     </div>
+
+</div>
+
+    <script src="case1.js"></script>
+
+    <div id="csps">
+
+        <div id="div_inputs">
+
+            <label>Bearing plate on concrete waler beam</label>
+            <div class="image-container">
+                
+            <img src="../Images/ConcreteWedge.png">
+            </div>
+               
+        </div>
+    
+        <div id="div_inputs">
+            <div class="input-group">
+                <label for="FTL2">Factored test load:</label>
+                <input id="FTL2" style="font-size: small" value="200" type="text" placeholder="Enter the factored test load" title="Factored test load">
+                <span class="unit"> kips</span>
+            </div>
+            <div class="input-group">
+                <label for="BPW2">Bearing plate width (f):</label>
+                <input id="BPW2" style="font-size: small" value="13.5" type="text" placeholder="Enter the bearing plate width" title="Bearing plate width (f)">
+                <span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label for="BPL2">Bearing plate length (b):</label>
+                <input id="BPL2" style="font-size: small" value="13.5" type="text" placeholder="Enter the bearing plate length" title="Bearing plate length (b)">
+                <span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label for="BPT2">Bearing plate thickness (t):</label>
+                <input id="BPT2" style="font-size: small" value="2.25" type="text" placeholder="Enter the bearing plate thickness" title="Bearing plate thickness (t)">
+                <span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label for="BPHD2">Bearing plate hole diameter (c):</label>
+                <input id="BPHD2" style="font-size: small" value="4.5" type="text" placeholder="Enter the bearing plate hole diameter" title="Bearing plate hole diameter (c)">
+                <span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label for="AHD2">Anchor head diameter (d):</label>
+                <input id="AHD2" style="font-size: small" value="7.25" type="text" placeholder="Enter the anchor head diameter" title="Anchor head diameter (d)">
+                <span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label for="CHD">Cored hole diameter (CHD):</label>
+                <input id="CHD" style="font-size: small" value="8.625" type="text" placeholder="Enter the cored hole diameter" title="Cored hole diameter (CHD)">
+                <span class="unit"> inches</span>
+            </div>
+            <div class="input-group">
+                <label for="FC">Concrete compressive strength f 'c:</label>
+                <input id="FC" style="font-size: small" value="4.0" type="text" placeholder="Enter the concrete compressive strength" title="Concrete compressive strength f 'c">
+                <span class="unit"> ksi</span>
+            </div>
+            <div class="input-group">
+                <label for="BPYS2">Bearing plate yield strength F'y:</label>
+                <input id="BPYS2" style="font-size: small" value="50" type="text" placeholder="Enter the bearing plate yield strength" title="Bearing plate yield strength F'y">
+                <span class="unit"> ksi</span>
+            </div>
+            <div class="input-group">
+                <label for="BSRF2">Bearing stress reduction factor:</label>
+                <input id="BSRF2" style="font-size: small" value="0.9" type="text" placeholder="Enter the bearing stress reduction factor" title="Bearing stress reduction factor">
+                <span class="unit"> (0.9)</span>
+            </div>
+            <div class="input-group">
+                <label for="ABCS">Allowable concrete bearing stress:</label>
+                <input id="ABCS" style="font-size: small" value="2.4" type="text" placeholder="Enter the allowable concrete bearing stress" title="Allowable concrete bearing stress">
+                <span class="unit"> ksi</span>
+            </div>
+
+            <button id="mySubmit2">Submit</button>
+        </div>
+
+
+    <div id="div2">
+            <div id="bearing-image" class="container">
+                <img id="bearing-imagepng" src="../Images/BearingPlate(Rev).png" alt="Bearing Plate (Rev)">
+            </div>
+        
+        <h1>Results:</h1>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Centered Result</title>
+            
+        </head>
+        <body>
+            <p class="center-container">
+                <span class="label">Bearing plate moment of inertia:</span>
+                <span class="result" id="pmoi">Result</span></p>
+            <p class="center-container"> 
+                <span class="label">Net bearing plate area on concrete:</span>
+                <span class="result" id="nbpa">Result</span></p>
+            <p class="center-container">
+                <span class="label">Concrete stress:</span> 
+                <span class="result" id="cs"> Result</span></p>
+            <p class="center-container">
+                <span class="label">Net bearing stress on bearing plate:</span> 
+                <span class="result" id="nbsobp">Result</span></p>
+            <p class="center-container">
+                <span class="label">Moment at centerline of bearing plate:</span> 
+                <span class="result" id="macobp">Result</span></p>
+            <p class="center-container">
+                <span class="label">Bearing on concrete: </span>
+                <span class="result" id="boc">Result</span></p>
+            <p class="center-container">
+                <span class="label">Bearing on steel plate: </span>
+                <span class="result" id="bosp">Result</span></p>
+            <p class="center-container">
+                <span class="label">Bending stress: </span>
+                <span class="result" id= "bs">Result</span></p>
+            <p class="center-container">
+                <span class="label">Allowable bending stress: </span>
+                <span class="result" id="abs">Result</span></p>
+            <p class="center-container">
+                <span class="label"> S required: </span>
+                <span class="result" id="Sreq2">Result</span></p>
+            <p class="center-container">
+                <span class="label">S provided: </span>
+                 <span class="result" id="Sprov2">Result</span></p>
+            <p class="center-container">
+                <span class="status">Bearing Plate Design Status:</span>
+                <span id="plp2"></span></p>
+            <p class="center-container">
+                <span class="status">Concrete Strength Status:</span>
+                <span id="css"></span></p>
+        
+
+     </div>
+
+    </div>
+
+    </div>
+
     <script src="case1.js"></script>
 </body>
 <div id="footer">
-    <button class = "nav-button2" onClick="window.print()">Print this page</button>
 
-    
-    <span><p style="font-size: 12px; font-weight: bold; color: rgb(248, 247, 245); text-align: right;"> Simon Worku & Samuael Tadele
-    <span><p style="font-size: 12px; font-weight: bold; color: rgb(248, 247, 245); text-align: right;"> &copy; 2024 Bearing Plate Check
+    <div id="footer">
+        <button class="nav-button2" onClick="window.print()">Print this page</button>
+        <p class="footer2">Simon Worku & Samuel Tadele</p>
+        <p class="footer2">&copy; 2024 Miscellaneous Design / Check</p>
+    </div>
     
 </div>
-
 
 </html>

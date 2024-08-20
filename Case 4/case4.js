@@ -4,12 +4,51 @@ document.getElementById("noniso").style.display = "none";
 document.getElementById("iso").style.display = "block";
 document.getElementById("noniso1").style.display = "none";
 document.getElementById("iso1").style.display = "block";
-function myFunction() {
+
+function selectSKT(){
+    let skto = document.getElementById("skt").value;
+    if(skto == "Isolated Shear Key"){
+        document.getElementById("noniso1").style.display = "none";
+        document.getElementById("iso1").style.display = "block";
+        document.getElementById("iso").style.display = "block";
+        document.getElementById("noniso").style.display = "none";
+    }
+
+    else if(skto == "Non Isolated Shear Key"){
+        document.getElementById("iso1").style.display = "none";
+        document.getElementById("noniso1").style.display = "block";
+        document.getElementById("noniso").style.display = "block";
+        document.getElementById("iso").style.display = "none";
+        
+    }
+}
+
+function selectFTG(){
+    let ftyp = document.getElementById("ftype").value;
+    if(ftyp == "Pile Footing"){
+        document.getElementById("pileftg").style.display = "block";
+        document.getElementById("ppa").style.display = "block";
+        document.getElementById("pileshr").style.display = "block";
+        document.getElementById("uscap").style.display = "block";
+    }
+
+    else if(ftyp == "Spread Footing"){
+        document.getElementById("pileftg").style.display = "none";
+        document.getElementById("ppa").style.display = "none";
+        document.getElementById("pileshr").style.display = "none";
+        document.getElementById("uscap").style.display = "none";
+    }
+}
+
+
+
+function myFunction(){
     // Retrieving input values
    // Retrieving input values
-   //let pjct = document.getElementById("pjct").value;
-   //let sname = document.getElementById("sname").value;
-   //let abtmt = document.getElementById("abtmt").value;
+   
+   let pjct = document.getElementById("pjct").value;
+   let sname = document.getElementById("sname").value;
+   let abtmt = document.getElementById("abtmt").value;
    let ftype = document.getElementById("ftype").value;
    let skt = document.getElementById("skt").value;
    let vsrebar = parseInt(document.getElementById("vsrebar").value);
@@ -72,6 +111,22 @@ function myFunction() {
     }
     
     
+    /**  document.addEventListener("DOMContentLoaded", function() {
+        // Get the input element and span element
+        const pjctInput = document.getElementById('pjct');
+        const projectName = document.getElementById('pjct');
+
+        // Function to set and print the pjct field
+        function setAndPrintProjectName() {
+            const projectNameValue = pjctInput.value;
+            projectName.textContent = projectNameValue;
+        }
+
+        // Add an event listener to the input element to update the pjct field when the value changes
+        pjctInput.addEventListener('input', setAndPrintProjectName);
+    });  
+*/
+
     //document.getElementById("pjct").textContent = " " + pjct;
     //document.getElementById("sname").textContent = " "+ sname;
     //document.getElementById("abtmt").textContent = " " + abtmt;
@@ -97,18 +152,23 @@ function myFunction() {
         niskc2 = "GOOD";
     }
     
-    
     let vra;
     if(skt== "Isolated Shear Key"){
         vra = Math.max(sc/(1.8*eyss),0.05*skbw*skbl*144/eyss)
+        document.getElementById("vra").textContent = vra.toFixed(2) + " in^2";
     }
     else if(niskc == "GOOD" && niskc2 == "GOOD" ){
         vra = Math.max((sc-0.4*144*skbw*skbl)/(1.4*eyss),0.05*skbl*skbw*144/eyss)
+        document.getElementById("vra").textContent = vra.toFixed(2) + " in^2";
     }
     else{
         vra = "WRONG KEY TYPE"
+        document.getElementById("vra").textContent = vra;
     }
-    document.getElementById("vra").textContent = vra.toFixed(2) + " in^2";
+    
+    
+
+
 
     let hra;
     if(skt == "Isolated Shear Key"){
@@ -131,7 +191,11 @@ function myFunction() {
     else{
         nvr = Math.ceil(vra/(3*vlook[vsrebar][1]))
     }
-    document.getElementById("nvr").textContent = nvr.toFixed(2) + "";
+    document.getElementById("nvr").textContent = nvr.toFixed(0) + "";
+   
+    let nvrl;
+    nvrl = vlook[vsrebar][0];
+    document.getElementById("nvrl").textContent = "#" + nvrl + " Tot ";  
 
     let nhr;
     if(vblay == 1){
@@ -143,7 +207,12 @@ function myFunction() {
     else{
         nhr = Math.ceil(hra/(3*vlook[hsrebar][1]))
     }
-    document.getElementById("nhr").textContent = nhr.toFixed(2) + "";
+    document.getElementById("nhr").textContent = nhr.toFixed(0) + "";
+
+
+    let nhrl;
+    nhrl = vlook[hsrebar][0];
+    document.getElementById("nhrl").textContent = "#" + nhrl + " Tot ";  
 
 
     let tdl;
@@ -158,26 +227,39 @@ function myFunction() {
     }
     document.getElementById("tdl").textContent = tdl.toFixed(3) + " ft";
 
-    let lhhh;
+    let lhhh; lhhhName;
     if(vrtype == "Hooked"){
         lhhh = ((hef+tslsk)*0.6+vlook[vsrebar][4])/12;
+        lhhhName = "Lmin, hooked (Std. Hooked Hanger Bars):  ";
         document.getElementById("lhhh").textContent = lhhh.toFixed(2) + " ft";
+        document.getElementById("lhhhName").textContent = lhhhName;
     }
     else{
-        lhhh = "N/A"
+        lhhh = ""
+        lhhhName = ""
         document.getElementById("lhhh").textContent = lhhh;
+        document.getElementById("lhhhName").textContent = lhhhName;
     }
 
-    let lmh;
+    let lmh; lmhName
     if(vrtype == "Headed"){
         lmh = ((hef+tslsk)*0.6+3)/12
+        lmhName = "Lmin, headed:  ";
+        document.getElementById("lmh").textContent = lmh.toFixed(2) + " ft";
+        document.getElementById("lmhName").textContent = lmhName;
     }
     else{
-        lmh = "N/A"
+        lmh = ""
+        lmhName = ""
+        document.getElementById("lmh").textContent = lmh;
+        document.getElementById("lmhName").textContent = lmhName;
     }
-    document.getElementById("lmh").textContent = lmh.toFixed(2) + " ft";
+
+
+    
  }
  else{
+
     ////////////////////////////////////////////////////////////////////////////////
 
     let nvr2;
@@ -190,8 +272,13 @@ function myFunction() {
     else{
         nvr2 = Math.ceil(vra/(numlegs*3*vlook[vsrebar][1]))
     }
-    document.getElementById("nvr2").textContent = nvr2
+    document.getElementById("nvr2").textContent = nvr2.toFixed(0) ;
     
+    let nvrl2;
+    nvrl2 = vlook[vsrebar][0];
+    document.getElementById("nvrl2").textContent = "#" + nvrl2 + " Tot ";  
+
+
     let nhr2;
     if(hblay == 1){
         nhr2 = Math.ceil(hra/vlook[hsrebar][1])
@@ -202,7 +289,12 @@ function myFunction() {
     else{
         nhr2 = Math.ceil(hra/(3*vlook[hsrebar][1]))
     }
-    document.getElementById("nhr2").textContent = nhr2;
+    document.getElementById("nhr2").textContent = nhr2.toFixed(0) + "";
+
+    let nhrl2;
+    nhrl2 = vlook[hsrebar][0];
+    document.getElementById("nhrl2").textContent = "#" + nhrl2 + " Tot ";  
+
 
     let tdl2;
     if(vblay == 1){
@@ -217,11 +309,12 @@ function myFunction() {
     document.getElementById("tdl2").textContent = tdl2.toFixed(3) + " ft";
 
    
-    document.getElementById("niskc").textContent = niskc;
+    // document.getElementById("niskc").textContent = niskc;
 
     let hdl;
     if(vblay == 1){
         hdl = vra/(nvr2*numlegs*vlook[vsrebar][1])*vlook[vsrebar][4]/12
+
     }
     else if(vblay == 2){///check if the formula for this one is correct with Dawit
         hdl = (1.2*vra/(nvr2*numlegs*2*vlook[vsrebar][1])*vlook[vsrebar][4]/12)
@@ -229,19 +322,22 @@ function myFunction() {
     else{
         hdl = (1.33*vra/(nvr2*numlegs*3*vlook[vsrebar][1])*vlook[vsrebar][4]/12)
     }
-    document.getElementById("hdl").textContent = hdl.toFixed(3) + " in^2";
+    document.getElementById("hdl").textContent = hdl.toFixed(3) + " in";
 
    
-    document.getElementById("niskc2").textContent = niskc2;
+    // document.getElementById("niskc2").textContent = niskc2;
 
  }
 
-    
-    
-    
-    
-    
-    
+ if(lmh=="N/A"){
+    document.getElementById("lmh").style.display = "none";
+ }
+   else if(lhhh=="N/A"){
+    document.getElementById("lhhh").style.display = "none";
+   
+   }
+ 
+
     
     
 }
