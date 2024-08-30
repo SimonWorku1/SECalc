@@ -41,7 +41,6 @@ function selectFTG(){
 }
 
 
-
 function myFunction(){
     // Retrieving input values
    // Retrieving input values
@@ -90,6 +89,8 @@ function myFunction(){
         [18,4.00,2.257,105.000,42.833]
 
     ]
+
+
     // Calculating results
     if(skt == "Isolated Shear Key"){
         document.getElementById("non-isolated").style.display = "none";
@@ -109,33 +110,12 @@ function myFunction(){
         document.getElementById("noniso1").style.display = "block";
         
     }
-    
-    
-    /**  document.addEventListener("DOMContentLoaded", function() {
-        // Get the input element and span element
-        const pjctInput = document.getElementById('pjct');
-        const projectName = document.getElementById('pjct');
+  
 
-        // Function to set and print the pjct field
-        function setAndPrintProjectName() {
-            const projectNameValue = pjctInput.value;
-            projectName.textContent = projectNameValue;
-        }
-
-        // Add an event listener to the input element to update the pjct field when the value changes
-        pjctInput.addEventListener('input', setAndPrintProjectName);
-    });  
-*/
-
-    //document.getElementById("pjct").textContent = " " + pjct;
-    //document.getElementById("sname").textContent = " "+ sname;
-    //document.getElementById("abtmt").textContent = " " + abtmt;
-    //console.log(document.getElementById("pjct"))
-
-
+  
     let sc;
     if(ftype == "Spread Footing"){
-        sc = wwt*hww;
+        sc = Math.min(af*(0.5*(adl+ssdl)), af*ssdl);
     }
     else{
         sc = Math.min((af*(0.75*uscap*ppa)+wwt*hww*dctsf*144*Math.sqrt(csf*1000)),af*ssdl)
@@ -147,28 +127,50 @@ function myFunction(){
     if(skt == "Non Isolated Shear Key" && sc>0.4*skbw*skbl*144){
         niskc = "GOOD"
     }
+
     let niskc2;
     if(skt == "Non Isolated Shear Key" && sc <= Math.min(0.25*ecsf*144*skbl*skbw,1.5*skbl*skbw*144)){
         niskc2 = "GOOD";
     }
     
-    let vra;
+    
+
+    if(sc<=0.4*skbw*skbl*144 || sc > Math.min(0.25*ecsf*144*skbl*skbw,1.5*skbl*skbw*144)){
+        document.getElementById("non-isolated").style.display = "none";
+        document.getElementById("common").style.display = "none";
+        document.getElementById("status").style.display = "block";
+    }
+
+    else {
+        document.getElementById("status").style.display = "none";
+        document.getElementById("common").style.display = "block";
+        document.getElementById("non-isolated").style.display = "block";
+    }
+
+
+    let vra; skstatus;
+
     if(skt== "Isolated Shear Key"){
         vra = Math.max(sc/(1.8*eyss),0.05*skbw*skbl*144/eyss)
         document.getElementById("vra").textContent = vra.toFixed(2) + " in^2";
+        document.getElementById("vra").style.color = "white";
+        document.getElementById("vra").style.fontWeight= "normal";
     }
     else if(niskc == "GOOD" && niskc2 == "GOOD" ){
         vra = Math.max((sc-0.4*144*skbw*skbl)/(1.4*eyss),0.05*skbl*skbw*144/eyss)
         document.getElementById("vra").textContent = vra.toFixed(2) + " in^2";
+        document.getElementById("vra").style.color = "white";
+        document.getElementById("vra").style.fontWeight= "normal";
     }
     else{
-        vra = "WRONG KEY TYPE"
-        document.getElementById("vra").textContent = vra;
+        skstatus= " Inadquate Shear Key Area"
+        document.getElementById("skstatus").textContent = skstatus;
+        document.getElementById("skstatus").style.color = "red";
+        document.getElementById("skstatus").style.backgroundColor = "none";
+        document.getElementById("skstatus").style.fontWeight = "bold";
+        document.getElementById("skstatus").style.marginLeft = "10px";
+        element.title = "Increase Shear Key Concrete Interface Area"; // Add hover note
     }
-    
-    
-
-
 
     let hra;
     if(skt == "Isolated Shear Key"){
@@ -336,8 +338,6 @@ function myFunction(){
     document.getElementById("lhhh").style.display = "none";
    
    }
- 
-
     
     
 }

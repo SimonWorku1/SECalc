@@ -75,7 +75,7 @@
                     
                 </div>
             <div class="input-group">
-                <label for="vblay">Number of Bundles:</label>
+                <label for="vblay">Number of Vertical Rebar Bundles:</label>
 
                 <select name="Vertical Bar Layout" id="vblay">
                     <option value="1">Single</option>
@@ -130,7 +130,7 @@
                   
             </div>
             <div class="input-group">
-                <label for="hblay">Number of Bundles:</label>
+                <label for="hblay">Number of Horizontal Bar Bundles :</label>
 
                 <select name="Horizontal Bar Layout" id="hblay">
                 <option value="1">Single</option>
@@ -203,7 +203,7 @@
             <div id="pileshr">
             
                 <div class="input-group">
-                    <label for="uscap">Ult. Shear Capacity of Abut Piles, <span class = "subscript"></span>:</label>
+                    <label for="uscap">Ult. Shear Capacity of Abut Piles, k<span class = "subscript">p</span>:</label>
                     <input id="uscap" value="30" type="text" >
                     <span class="unit"> kip</span>
                 
@@ -241,12 +241,12 @@
                 <span class="unit"></span>
             </div>
             <div class="input-group">
-                <label for="srf">Shear Reduction Factor (LRFD) <span class = "subscript">fs</span>:</label>
+                <label for="srf">Shear Reduction Factor (LRFD) &phi;<span class = "subscript">s</span>:</label>
                 <input id="srf" value="0.9" type="text" >
                 <span class="unit"></span>
             </div>
             <div class="input-group">
-                <label for="dctsf">Diagonal Crack Tension and Shear Factor <span class = "subscript">b</span>:</label>
+                <label for="dctsf">Diagonal Crack Tension and Shear Factor &beta;<span class = "subscript"></span>:</label>
                 <input id="dctsf" value="2" type="text" >
                 <span class="unit"></span>
             </div>
@@ -278,7 +278,15 @@
             <img id="image"  src="../Images/Non-Isolated.png" alt="Non-Isolated">
         </div>
 
+        <div id="status">
 
+            <p class="center-container">
+                <span class="label"> Shear Key Design Status <span class = "subscript"></span>:</span>
+                <span class="result" id="skstatus">Result</span></p>
+        </div>
+
+
+        <div id = "common">
         <p class="center-container">
             <span class="label">Shear Capacity F <span class = "subscript">sk</span>:</span>
             <span class="result" id="sc">Result</span></p>
@@ -290,6 +298,8 @@
         <p class="center-container">
             <span class="label">Horizontal Rebar Area, A <span class = "subscript">sh</span>:</span>
             <span class="result" id="hra">Result</span></p>
+
+        </div>
 
         <div id = "isolated">
 
@@ -338,8 +348,6 @@
         </div>
         </div>
         
-        
-            
         
     
 
