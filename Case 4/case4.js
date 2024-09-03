@@ -33,14 +33,14 @@ function selectFTG(){
     if(ftyp == "Pile Footing"){
         document.getElementById("pileftg").style.display = "block";
         document.getElementById("ppa").style.display = "block";
-        document.getElementById("pileshr").style.display = "block";
+    
         document.getElementById("uscap").style.display = "block";
     }
 
     else if(ftyp == "Spread Footing"){
         document.getElementById("pileftg").style.display = "none";
         document.getElementById("ppa").style.display = "none";
-        document.getElementById("pileshr").style.display = "none";
+     
         document.getElementById("uscap").style.display = "none";
     }
 }
