@@ -27,7 +27,7 @@
             <input value="ABC Bridge UC" id="sname" type="text" placeholder="Enter structure name">
         </div>
         <div class="selectColor">
-            <label for="abtmt">  Abutment No.  :</label>
+            <label for="abtmt"> Abutment Number  :</label>
             <input class="selectColor" value = "Abutment No. 1" id="abtmt"  type="text" placeholder="Enter abutment No." >
         </div>
 
@@ -85,10 +85,7 @@
                 
             </div>
 
-            
-
-            <div id = "iso1" class="input-group">
-                 <!--******NOTE****** when making .js for this input and the # of legs of vert rebar, check spreadsheet for instructions-->
+                 <div id = "iso1" class="input-group" >
                
                     <label for="vrtype">Vertical Rebar Type:</label>
 
@@ -96,22 +93,23 @@
                         <option value="Headed">Headed</option>
                         <option value="Hooked">Hooked</option>
                     </select>
-                    
-               
-            </div>
-            <div id = "noniso1" class="input-group">
+                </div>
+          
+
+                <div id= "noniso1" class="input-group">
                 
-                <label for="numlegs">Number of Legs of Vertical Rebar:</label>
+                    <label for="numlegs">Number of Legs of Vertical Rebar:</label>
 
                     <select name="Num of Legs of Vertical Rebar" id="numlegs">
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
-                    <option value="5">5</option>
+                        <option value="5">5</option>
                     </select>
                     
-    
-            </div>
+                </div>
+            
+            
             <div class="input-group">
                 <label for="hsrebar">Horizontal Shear Rebar:</label>
                 <select name="Horizontal Shear Rebar" id="hsrebar">
@@ -251,13 +249,13 @@
                 <span class="unit"></span>
             </div>
 
-            <button onclick = "myFunction()" id="mySubmit">submit</button>
+            <button onclick = "myFunction()"  id="mySubmit">submit</button>
         </div>
     
     </div>      
     
 
-        <div id = "div2">
+    <div id = "div2">
         
      
         <h1>Results:</h1>
@@ -267,7 +265,7 @@
             <title>Centered Result</title>
             
         </head>
-        <body>
+    <body>
 
         <div id = "iso">
             <h1>Isolated Shear Key</h1>
@@ -299,65 +297,69 @@
             <span class="label">Horizontal Rebar Area, A <span class = "subscript">sh</span>:</span>
             <span class="result" id="hra">Result</span></p>
 
-        </div>
+      
 
-        <div id = "isolated">
+        <div id = "isolatedsk">
 
-        <p class="center-container">
+            <p class="center-container">
             <span class="label">Number of Vertical Rebars:</span>
             <span class="result" id="nvrl">Result</span><span class="result1" id="nvr"></span></p>
 
-        <p class="center-container">
+            <p class="center-container">
             <span class="label">Number of Horizontal Rebars: </span>
             <span class="result" id="nhrl">Result</span><span class="result1" id="nhr"></span></p>
 
-        <p class="center-container">
+            <p class="center-container">
             <span class="label">Tension development length, l <span class = "subscript">d</span>:</span>
             <span class="result" id="tdl">Result</span></p>
 
-        <p class="center-container">
+            <p class="center-container">
             <span class="label" id="lhhhName"></span>
             <span class="result" id="lhhh"></span></p>
 
-        <p class="center-container">
+            <p class="center-container">
             <span class="label" id="lmhName"></span>
             <span class="result" id="lmh"></span></p>
 
         </div>
 
-        <div id = "non-isolated">
+        <div id = "non-isolatedsk">
 
-        <p class="center-container">
+            <p class="center-container">
             <span class="label">Number of Vertical Rebars: </span>
-            <span class="result" id="nvrl2">Result</span><span id="nvr2"></span></p>
+            <span class="result" id="nvrl2">Result</span><span class="result1" id="nvr2"></span></p>
 
-        <p class="center-container">
+            <p class="center-container">
             <span class="label">Number of Horizontal Revars: </span>
-            <span class="result" id="nhrl2">Result</span><span id="nhr2"></span></p>
+            <span class="result" id="nhrl2">Result</span><span class="result1" id="nhr2"></span></p>
         
-        <p class="center-container">
+            <p class="center-container">
             <span class="label">Tension development length, l <span class = "subscript">d</span>:</span>
             <span class="result" id="tdl2">Result</span></p>
     
-        <p class="center-container">
+            <p class="center-container">
             <span class="label">Vertical Rebar development length, l <span class = "subscript">dh</span>:</span>
             <span class="result" id="hdl">Result</span></p>
-   
-        <!-- <p>Non-Iso. Shear Key Condition 1: <span id="niskc"></span></p> -->
-        <!-- <p>Non-Iso. Shear Key Condition 2: <span id="niskc2"></span></p> -->
+
         </div>
         </div>
+
+    </body>
+
+    </div>
         
         
     
 
     <script src="case4.js"></script>
-</body>
+
 <div id="footer">
     <button class = "nav-button2" onClick="window.print()">Print this page</button>
 
 
     <span><p class="footer2"> Simon Worku & Samuael Tadele
-        <span><p class="footer2"> &copy; 2024 Miscellaneous Design / Check
+        <span><p class="footer2"> &copy; 2024 Miscellaneous Design / Check </p></span></p></span>
+        
+</div>
 
 </html>

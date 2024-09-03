@@ -1,5 +1,5 @@
-document.getElementById("non-isolated").style.display = "none";
-document.getElementById("isolated").style.display = "block";
+document.getElementById("non-isolatedsk").style.display = "none";
+document.getElementById("isolatedsk").style.display = "block";
 document.getElementById("noniso").style.display = "none";
 document.getElementById("iso").style.display = "block";
 document.getElementById("noniso1").style.display = "none";
@@ -12,6 +12,9 @@ function selectSKT(){
         document.getElementById("iso1").style.display = "block";
         document.getElementById("iso").style.display = "block";
         document.getElementById("noniso").style.display = "none";
+        document.getElementById("non-isolatedsk").style.display = "none";
+        document.getElementById("isolatedsk").style.display = "block";
+        
     }
 
     else if(skto == "Non Isolated Shear Key"){
@@ -19,6 +22,8 @@ function selectSKT(){
         document.getElementById("noniso1").style.display = "block";
         document.getElementById("noniso").style.display = "block";
         document.getElementById("iso").style.display = "none";
+        document.getElementById("non-isolatedsk").style.display = "block";
+        document.getElementById("isolatedsk").style.display = "none";
         
     }
 }
@@ -93,17 +98,19 @@ function myFunction(){
 
     // Calculating results
     if(skt == "Isolated Shear Key"){
-        document.getElementById("non-isolated").style.display = "none";
-        document.getElementById("isolated").style.display = "block";
+        document.getElementById("non-isolatedsk").style.display = "none";
+        document.getElementById("isolatedsk").style.display = "block";
         document.getElementById("noniso").style.display = "none";
         document.getElementById("iso").style.display = "block";
         document.getElementById("noniso1").style.display = "none";
         document.getElementById("iso1").style.display = "block";
 
+
+
     }
     else if(skt == "Non Isolated Shear Key"){
-        document.getElementById("isolated").style.display = "none";
-        document.getElementById("non-isolated").style.display = "block";
+        document.getElementById("isolatedsk").style.display = "none";
+        document.getElementById("non-isolatedsk").style.display = "block";
         document.getElementById("iso").style.display = "none";
         document.getElementById("noniso").style.display = "block";
         document.getElementById("iso1").style.display = "none";
@@ -135,18 +142,20 @@ function myFunction(){
     
     
 
-    if(sc<=0.4*skbw*skbl*144 || sc > Math.min(0.25*ecsf*144*skbl*skbw,1.5*skbl*skbw*144)){
-        document.getElementById("non-isolated").style.display = "none";
+    if(skt == "Non Isolated Shear Key"&&(sc<=0.4*skbw*skbl*144 || sc > Math.min(0.25*ecsf*144*skbl*skbw,1.5*skbl*skbw*144))){
+        document.getElementById("non-isolatedsk").style.display = "none";
         document.getElementById("common").style.display = "none";
         document.getElementById("status").style.display = "block";
     }
 
-    else {
+    else if(skt == "Non Isolated Shear Key"){
         document.getElementById("status").style.display = "none";
         document.getElementById("common").style.display = "block";
-        document.getElementById("non-isolated").style.display = "block";
+        document.getElementById("non-isolatedsk").style.display = "block";
     }
-
+    else {
+        document.getElementById("status").style.display = "none";
+    }    
 
     let vra; skstatus;
 
@@ -197,13 +206,23 @@ function myFunction(){
    
     let nvrl;
     nvrl = vlook[vsrebar][0];
-    document.getElementById("nvrl").textContent = "#" + nvrl + " Tot ";  
+
+    if(vblay == 1 ){
+        document.getElementById("nvrl").textContent = "Single #" + nvrl + " Tot " ;
+        }
+        else if(vblay == 2) {
+        document.getElementById("nvrl").textContent = "2- Bundles of #" + nvrl + " Tot "; 
+        }
+        else if (vblay == 3) {
+        document.getElementById("nvrl").textContent = "3- Bundles of #" + nvrl + " Tot " ;  
+        }
+
 
     let nhr;
-    if(vblay == 1){
+    if(hblay == 1){
         nhr = Math.ceil(hra/vlook[hsrebar][1])
     }
-    else if(vblay == 2){
+    else if(hblay == 2){
         nhr = Math.ceil(hra/(2*vlook[hsrebar][1]))
     }
     else{
@@ -214,8 +233,15 @@ function myFunction(){
 
     let nhrl;
     nhrl = vlook[hsrebar][0];
-    document.getElementById("nhrl").textContent = "#" + nhrl + " Tot ";  
-
+    if(hblay == 1){
+        document.getElementById("nhrl").textContent = "Single #" + nhrl + " Tot " ;
+     }
+        else if(hblay == 2) {
+            document.getElementById("nhrl").textContent = "2- Bundles of #" + nhrl + " Tot " ; 
+        }
+     else if(hblay == 3) {
+        document.getElementById("nhrl").textContent = "3- Bundles of #" + nhrl + " Tot " ;  
+     }
 
     let tdl;
     if(vblay == 1){
@@ -260,7 +286,7 @@ function myFunction(){
 
     
  }
- else{
+ else if(skt == "Non Isolated Shear Key"){
 
     ////////////////////////////////////////////////////////////////////////////////
 
@@ -278,8 +304,16 @@ function myFunction(){
     
     let nvrl2;
     nvrl2 = vlook[vsrebar][0];
-    document.getElementById("nvrl2").textContent = "#" + nvrl2 + " Tot ";  
 
+    if(vblay == 1){
+        document.getElementById("nvrl2").textContent = "Single #" + nvrl2 + " Tot ";
+     }
+        else if(vblay == 2) {
+            document.getElementById("nvrl2").textContent = "2- Bundles of #" + nvrl2 + " Tot " ; 
+        }
+     else if (vblay == 3) {
+        document.getElementById("nvrl2").textContent = "3- Bundles of #" + nvrl2 + " Tot " ;  
+     }
 
     let nhr2;
     if(hblay == 1){
@@ -295,7 +329,17 @@ function myFunction(){
 
     let nhrl2;
     nhrl2 = vlook[hsrebar][0];
-    document.getElementById("nhrl2").textContent = "#" + nhrl2 + " Tot ";  
+
+    if(hblay == 1 && skt == "Non Isolated Shear Key"){
+        document.getElementById("nhrl2").textContent = "Single #" + nhrl2 + " Tot " ;
+     }
+        else if(hblay == 2 && skt == "Non Isolated Shear Key") {
+            document.getElementById("nhrl2").textContent = "2- Bundles of #" + nhrl2 + " Tot " ; 
+        }
+     else if(hblay == 3 && skt == "Non Isolated Shear Key") {
+        document.getElementById("nhrl2").textContent = "3- Bundles of #" + nhrl2 + " Tot " ; 
+     } 
+
 
 
     let tdl2;
@@ -331,13 +375,4 @@ function myFunction(){
 
  }
 
- if(lmh=="N/A"){
-    document.getElementById("lmh").style.display = "none";
- }
-   else if(lhhh=="N/A"){
-    document.getElementById("lhhh").style.display = "none";
-   
-   }
-    
-    
 }
